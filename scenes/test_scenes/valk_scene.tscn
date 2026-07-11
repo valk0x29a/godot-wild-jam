@@ -3,9 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://dy83k5bsh4m4" path="res://prefabs/prototype_block.tscn" id="1_jsvff"]
 [ext_resource type="PackedScene" uid="uid://clnu47p5k0w8n" path="res://prefabs/player.tscn" id="2_8iyis"]
 [ext_resource type="PackedScene" uid="uid://cl27gtgh5ujsr" path="res://prefabs/barrel.tscn" id="3_8iyis"]
+[ext_resource type="PackedScene" uid="uid://dimba0sgreb5j" path="res://prefabs/bouncable_barrel.tscn" id="4_7pksr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jsvff"]
 size = Vector2(1142, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8iyis"]
+size = Vector2(48, 128)
 
 [node name="Node2D" type="Node2D" unique_id=780738810]
 
@@ -20,15 +24,38 @@ shape = SubResource("RectangleShape2D_jsvff")
 position = Vector2(45, 0)
 scale = Vector2(8.859375, 1)
 
+[node name="PrototypeBlock2" parent="." unique_id=1170064865 instance=ExtResource("1_jsvff")]
+position = Vector2(966, 356)
+
+[node name="CollisionShape2D" parent="PrototypeBlock2" index="0" unique_id=2079398294]
+shape = SubResource("RectangleShape2D_8iyis")
+
+[node name="Sprite2D" parent="PrototypeBlock2" index="1" unique_id=1264393732]
+position = Vector2(0, 0)
+scale = Vector2(0.38281193, 1)
+
+[node name="PrototypeBlock3" parent="." unique_id=807776814 instance=ExtResource("1_jsvff")]
+position = Vector2(1120, 283)
+
+[node name="CollisionShape2D" parent="PrototypeBlock3" index="0" unique_id=2079398294]
+shape = SubResource("RectangleShape2D_8iyis")
+
+[node name="Sprite2D" parent="PrototypeBlock3" index="1" unique_id=1264393732]
+position = Vector2(0, 0)
+scale = Vector2(0.38281193, 1)
+
+[node name="PrototypeBlock4" parent="." unique_id=1052361379 instance=ExtResource("1_jsvff")]
+position = Vector2(968, 170)
+
+[node name="CollisionShape2D" parent="PrototypeBlock4" index="0" unique_id=2079398294]
+shape = SubResource("RectangleShape2D_8iyis")
+
+[node name="Sprite2D" parent="PrototypeBlock4" index="1" unique_id=1264393732]
+position = Vector2(0, 0)
+scale = Vector2(0.38281193, 1)
+
 [node name="Player" parent="." unique_id=1839459392 instance=ExtResource("2_8iyis")]
 position = Vector2(435, 354)
-speed = 8.0
-gravity = 29.4
-jump_force = 9.8
-coyotte_time = 0.1
-barrel_interaction_range = 1.0
-barrel_offset = Vector2(0, -1)
-throw_force = Vector2(5, -5)
 
 [node name="Barrel" parent="." unique_id=1008551793 instance=ExtResource("3_8iyis")]
 position = Vector2(220, 506)
@@ -36,4 +63,10 @@ position = Vector2(220, 506)
 [node name="Barrel2" parent="." unique_id=100855862 instance=ExtResource("3_8iyis")]
 position = Vector2(248, 506)
 
+[node name="Barrel3" parent="." unique_id=1513682364 instance=ExtResource("4_7pksr")]
+position = Vector2(295, 506)
+
 [editable path="PrototypeBlock"]
+[editable path="PrototypeBlock2"]
+[editable path="PrototypeBlock3"]
+[editable path="PrototypeBlock4"]

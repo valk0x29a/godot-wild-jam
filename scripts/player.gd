@@ -11,9 +11,7 @@ extends CharacterBody2D
 var PLAYER_SIZE: float = 32.0;
 
 var not_grounded_timer: float = 0.0;
-
 var chosen_barrel: Barrel = null;	
-
 var is_flipped: bool = false;
 
 func _physics_process(delta: float) -> void:
@@ -33,6 +31,7 @@ func _physics_process(delta: float) -> void:
 			throw_vec *= PLAYER_SIZE;
 			throw_vec += velocity;
 			chosen_barrel.apply_impulse(throw_vec);
+			# chosen_barrel.is_thrown = true;
 			chosen_barrel = null;
 	if(Input.is_action_just_pressed("Interact")):
 		if(chosen_barrel == null):
@@ -53,8 +52,6 @@ func _physics_process(delta: float) -> void:
 		not_grounded_timer = 0.0;
 	else:
 		not_grounded_timer += delta;
-
-
 	
 	velocity.x = input_x * PLAYER_SIZE * speed;
 	velocity.y += gravity * PLAYER_SIZE * delta;

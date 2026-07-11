@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://cl27gtgh5ujsr"]
+[gd_scene format=3 uid="uid://dimba0sgreb5j"]
 
-[ext_resource type="Script" uid="uid://dyejnbc2xvn2w" path="res://scripts/barrel.gd" id="1_aifdq"]
-[ext_resource type="Texture2D" uid="uid://brramo03vm2ig" path="res://icon.svg" id="1_yrrnx"]
+[ext_resource type="Script" uid="uid://dyejnbc2xvn2w" path="res://scripts/barrel.gd" id="1_gsamw"]
+[ext_resource type="Texture2D" uid="uid://brramo03vm2ig" path="res://icon.svg" id="2_ty0dx"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_aifdq"]
 bounce = 0.9
@@ -14,11 +14,12 @@ physics_material_override = SubResource("PhysicsMaterial_aifdq")
 can_sleep = false
 contact_monitor = true
 max_contacts_reported = 1
-script = ExtResource("1_aifdq")
+script = ExtResource("1_gsamw")
+bounciness = 1.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1246450492]
 scale = Vector2(0.12499999, 0.12499999)
-texture = ExtResource("1_yrrnx")
+texture = ExtResource("2_ty0dx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1885817650]
 shape = SubResource("CircleShape2D_8iyis")

@@ -2,9 +2,11 @@ extends RigidBody2D
 class_name Barrel
 
 var is_thrown: bool = false;
+@export var bounciness: float = 0.0;
 
 func _ready() -> void:
     is_thrown = false;
+    physics_material_override.bounce = bounciness;
 
 func disable_physics():
     freeze = true;
@@ -12,4 +14,4 @@ func disable_physics():
 
 func enable_physics():
     freeze = false;
-    process_mode = Node.PROCESS_MODE_PAUSABLE;
+    process_mode = Node.PROCESS_MODE_PAUSABLE; 
