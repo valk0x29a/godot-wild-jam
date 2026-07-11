@@ -15,7 +15,7 @@ can_sleep = false
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_gsamw")
-bounciness = 1.0
+bounciness = 0.9
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1246450492]
 scale = Vector2(0.12499999, 0.12499999)
