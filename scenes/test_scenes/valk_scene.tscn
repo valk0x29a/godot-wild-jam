@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dy83k5bsh4m4" path="res://prefabs/prototype_block.tscn" id="1_jsvff"]
 [ext_resource type="PackedScene" uid="uid://clnu47p5k0w8n" path="res://prefabs/player.tscn" id="2_8iyis"]
 [ext_resource type="PackedScene" uid="uid://cl27gtgh5ujsr" path="res://prefabs/barrel.tscn" id="3_8iyis"]
-[ext_resource type="PackedScene" uid="uid://dimba0sgreb5j" path="res://prefabs/bouncable_barrel.tscn" id="4_7pksr"]
+[ext_resource type="PackedScene" uid="uid://eadexlx14bww" path="res://prefabs/bouncable_barrel.tscn" id="4_7pksr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jsvff"]
 size = Vector2(1142, 128)
@@ -25,7 +25,7 @@ position = Vector2(45, 0)
 scale = Vector2(8.859375, 1)
 
 [node name="PrototypeBlock2" parent="." unique_id=1170064865 instance=ExtResource("1_jsvff")]
-position = Vector2(966, 356)
+position = Vector2(966, 367)
 
 [node name="CollisionShape2D" parent="PrototypeBlock2" index="0" unique_id=2079398294]
 shape = SubResource("RectangleShape2D_8iyis")
@@ -35,7 +35,7 @@ position = Vector2(0, 0)
 scale = Vector2(0.38281193, 1)
 
 [node name="PrototypeBlock3" parent="." unique_id=807776814 instance=ExtResource("1_jsvff")]
-position = Vector2(1120, 283)
+position = Vector2(1120, 337)
 
 [node name="CollisionShape2D" parent="PrototypeBlock3" index="0" unique_id=2079398294]
 shape = SubResource("RectangleShape2D_8iyis")
@@ -45,7 +45,7 @@ position = Vector2(0, 0)
 scale = Vector2(0.38281193, 1)
 
 [node name="PrototypeBlock4" parent="." unique_id=1052361379 instance=ExtResource("1_jsvff")]
-position = Vector2(968, 170)
+position = Vector2(968, 205)
 
 [node name="CollisionShape2D" parent="PrototypeBlock4" index="0" unique_id=2079398294]
 shape = SubResource("RectangleShape2D_8iyis")
@@ -63,8 +63,8 @@ position = Vector2(220, 506)
 [node name="Barrel2" parent="." unique_id=100855862 instance=ExtResource("3_8iyis")]
 position = Vector2(248, 506)
 
-[node name="Barrel3" parent="." unique_id=1513682364 instance=ExtResource("4_7pksr")]
-position = Vector2(295, 506)
+[node name="Barrel3" parent="." unique_id=1347991585 instance=ExtResource("4_7pksr")]
+position = Vector2(293, 506)
 
 [editable path="PrototypeBlock"]
 [editable path="PrototypeBlock2"]
