@@ -1,6 +1,25 @@
 [gd_scene format=3 uid="uid://eadexlx14bww"]
 
-[ext_resource type="PackedScene" uid="uid://cl27gtgh5ujsr" path="res://prefabs/barrel.tscn" id="1_iqdq0"]
+[ext_resource type="Script" uid="uid://dyejnbc2xvn2w" path="res://scripts/barrel.gd" id="1_gsamw"]
+[ext_resource type="Texture2D" uid="uid://brramo03vm2ig" path="res://icon.svg" id="2_ty0dx"]
 
-[node name="Barrel" unique_id=1008551793 instance=ExtResource("1_iqdq0")]
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_aifdq"]
+bounce = 0.9
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8iyis"]
+
+[node name="Bouncable Barrel" type="RigidBody2D" unique_id=1008551793 groups=["barrel"]]
+collision_layer = 4
+physics_material_override = SubResource("PhysicsMaterial_aifdq")
+can_sleep = false
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_gsamw")
 bounciness = 0.9
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1246450492]
+scale = Vector2(0.12499999, 0.12499999)
+texture = ExtResource("2_ty0dx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1885817650]
+shape = SubResource("CircleShape2D_8iyis")

@@ -63,8 +63,8 @@ position = Vector2(220, 506)
 [node name="Barrel2" parent="." unique_id=100855862 instance=ExtResource("3_8iyis")]
 position = Vector2(248, 506)
 
-[node name="Barrel3" parent="." unique_id=1347991585 instance=ExtResource("4_7pksr")]
-position = Vector2(293, 506)
+[node name="Bouncable Barrel" parent="." unique_id=585856788 instance=ExtResource("4_7pksr")]
+position = Vector2(311, 504)
 
 [editable path="PrototypeBlock"]
 [editable path="PrototypeBlock2"]
