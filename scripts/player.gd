@@ -36,13 +36,18 @@ func _physics_process(delta: float) -> void:
 	if(Input.is_action_just_pressed("Interact")):
 		if(chosen_barrel == null):
 			var barrels = get_tree().get_nodes_in_group("barrel");
+			var closest_dist: float = 1.79769e308;
+			var closest_barrel: Barrel = null;
 			for i in barrels.size():
 				var barrel: Barrel = barrels[i];
 				var dist: = barrel.global_position.distance_to(global_position);
 				if(dist > barrel_interaction_range * PLAYER_SIZE): continue;
-				barrel.disable_physics();
-				chosen_barrel = barrel;
-				break;
+				if(dist < closest_dist):
+					closest_dist = dist;
+					closest_barrel = barrel;
+			if(closest_barrel != null):
+				closest_barrel.disable_physics();
+				chosen_barrel = closest_barrel;
 		else:
 			chosen_barrel.enable_physics();
 			chosen_barrel.apply_impulse(velocity);
