@@ -1,3 +1,39 @@
 [gd_scene format=3 uid="uid://7alfiucojex3"]
 
+[ext_resource type="PackedScene" uid="uid://dy83k5bsh4m4" path="res://prefabs/prototype_block.tscn" id="1_jsvff"]
+[ext_resource type="PackedScene" uid="uid://clnu47p5k0w8n" path="res://prefabs/player.tscn" id="2_8iyis"]
+[ext_resource type="PackedScene" uid="uid://cl27gtgh5ujsr" path="res://prefabs/barrel.tscn" id="3_8iyis"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jsvff"]
+size = Vector2(1142, 128)
+
 [node name="Node2D" type="Node2D" unique_id=780738810]
+
+[node name="PrototypeBlock" parent="." unique_id=690937238 instance=ExtResource("1_jsvff")]
+position = Vector2(529, 580)
+
+[node name="CollisionShape2D" parent="PrototypeBlock" index="0" unique_id=2079398294]
+position = Vector2(40, 0)
+shape = SubResource("RectangleShape2D_jsvff")
+
+[node name="Sprite2D" parent="PrototypeBlock" index="1" unique_id=1264393732]
+position = Vector2(45, 0)
+scale = Vector2(8.859375, 1)
+
+[node name="Player" parent="." unique_id=1839459392 instance=ExtResource("2_8iyis")]
+position = Vector2(435, 354)
+speed = 8.0
+gravity = 29.4
+jump_force = 9.8
+coyotte_time = 0.1
+barrel_interaction_range = 1.0
+barrel_offset = Vector2(0, -1)
+throw_force = Vector2(5, -5)
+
+[node name="Barrel" parent="." unique_id=1008551793 instance=ExtResource("3_8iyis")]
+position = Vector2(220, 506)
+
+[node name="Barrel2" parent="." unique_id=100855862 instance=ExtResource("3_8iyis")]
+position = Vector2(248, 506)
+
+[editable path="PrototypeBlock"]
