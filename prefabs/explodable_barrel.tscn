@@ -1,17 +1,86 @@
 [gd_scene format=3 uid="uid://cpo2u87gmon1o"]
 
 [ext_resource type="Script" uid="uid://dyejnbc2xvn2w" path="res://scripts/barrel.gd" id="1_i1xok"]
-[ext_resource type="Texture2D" uid="uid://brramo03vm2ig" path="res://icon.svg" id="2_3u64i"]
+[ext_resource type="Texture2D" uid="uid://clx2spq5kqpm0" path="res://assets/sprites/sprite-sheets/explosion-barrel-full-sheet.png" id="2_i1xok"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_aifdq"]
 bounce = 0.9
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_8iyis"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ov0u"]
+atlas = ExtResource("2_i1xok")
+region = Rect2(512, 0, 128, 128)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_16d1p"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_phkgd"]
+atlas = ExtResource("2_i1xok")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4dx4p"]
+atlas = ExtResource("2_i1xok")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7yhe"]
+atlas = ExtResource("2_i1xok")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gsayc"]
+atlas = ExtResource("2_i1xok")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ktyf"]
+atlas = ExtResource("2_i1xok")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kuqy8"]
+atlas = ExtResource("2_i1xok")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fq1pb"]
+atlas = ExtResource("2_i1xok")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jeeod"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ov0u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phkgd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4dx4p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7yhe")
+}],
+"loop": 1,
+"name": &"held",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gsayc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ktyf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kuqy8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fq1pb")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 6.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ycrwg"]
+radius = 33.0
+height = 108.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nd1ib"]
-radius = 64.0
+radius = 73.02739
 
 [node name="Explodable Barrel" type="RigidBody2D" unique_id=1008551793 groups=["barrel"]]
 collision_layer = 4
@@ -26,26 +95,29 @@ explodes_on_touch = true
 explode_required_force = 256.0
 explosion_force = 64.0
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1246450492]
-modulate = Color(0.90366024, 0.12701434, 0.15150803, 1)
-scale = Vector2(0.12499999, 0.12499999)
-texture = ExtResource("2_3u64i")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1170488692]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_jeeod")
+animation = &"idle"
+autoplay = "idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1885817650]
-shape = SubResource("CircleShape2D_8iyis")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=496172687]
+polygon = PackedVector2Array(-22, 63, 25, 63, 31, 35, 32, 7, 32, -15, 22, -38, 10, -42, -15, -42, -28, -35, -35, -5, -35, 23, -31, 48)
 
 [node name="Barrel Trigger" type="Area2D" parent="." unique_id=429074671]
 collision_layer = 0
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Barrel Trigger" unique_id=1776047726]
-shape = SubResource("CircleShape2D_16d1p")
+position = Vector2(-1, 10)
+shape = SubResource("CapsuleShape2D_ycrwg")
 
 [node name="ExplosionArea" type="Area2D" parent="." unique_id=1099070000]
 collision_layer = 0
 collision_mask = 30
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExplosionArea" unique_id=1322382983]
+position = Vector2(-1, 10)
 shape = SubResource("CircleShape2D_nd1ib")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

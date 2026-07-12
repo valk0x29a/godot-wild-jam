@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bv4nxvf3716i6"]
 
-[ext_resource type="Script" uid="uid://dc7b456u3h8kb" path="res://prefabs/door.gd" id="1_qfj2i"]
+[ext_resource type="Script" uid="uid://dc7b456u3h8kb" path="res://scripts/door.gd" id="1_qfj2i"]
 [ext_resource type="Texture2D" uid="uid://brramo03vm2ig" path="res://icon.svg" id="1_sum4q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ayko1"]

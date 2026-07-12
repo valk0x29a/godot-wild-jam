@@ -1,3 +1,90 @@
 [gd_scene format=3 uid="uid://crflmscd8phs4"]
 
+[ext_resource type="PackedScene" uid="uid://cl27gtgh5ujsr" path="res://prefabs/barrel.tscn" id="1_e5r6d"]
+[ext_resource type="PackedScene" uid="uid://eadexlx14bww" path="res://prefabs/bouncable_barrel.tscn" id="2_b6yo7"]
+[ext_resource type="PackedScene" uid="uid://cpo2u87gmon1o" path="res://prefabs/explodable_barrel.tscn" id="3_3ny0r"]
+[ext_resource type="PackedScene" uid="uid://clnu47p5k0w8n" path="res://prefabs/player.tscn" id="4_lmokh"]
+[ext_resource type="PackedScene" uid="uid://pbtvdudegxiq" path="res://prefabs/prototype_rock.tscn" id="5_dxx7p"]
+[ext_resource type="PackedScene" uid="uid://becukr2fpntm5" path="res://prefabs/button.tscn" id="6_lethi"]
+[ext_resource type="PackedScene" uid="uid://bv4nxvf3716i6" path="res://prefabs/door.tscn" id="7_v85sp"]
+
 [node name="Bad2dScene" type="Node2D" unique_id=875185498]
+
+[node name="Player" parent="." unique_id=75895601 instance=ExtResource("4_lmokh")]
+position = Vector2(343, 602)
+
+[node name="floor" type="StaticBody2D" parent="." unique_id=298588419]
+modulate = Color(0.999983, 0.33321214, 0.26815692, 1)
+position = Vector2(109, 681)
+
+[node name="Polygon2D" type="Polygon2D" parent="floor" unique_id=1947488221]
+polygon = PackedVector2Array(43, -15, 983, -17, 983, 38, 44, 36)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="floor" unique_id=1069162369]
+polygon = PackedVector2Array(42, -15, 983, -17, 984, 38, 43, 36)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="floor" unique_id=1057932077]
+polygon = PackedVector2Array(42, -15, 983, -17, 984, 38, 43, 36)
+
+[node name="floor2" type="StaticBody2D" parent="." unique_id=1027482528]
+modulate = Color(1, 0.2952768, 0.22982273, 1)
+position = Vector2(1047, 681)
+
+[node name="Polygon2D" type="Polygon2D" parent="floor2" unique_id=611285148]
+polygon = PackedVector2Array(43, -15, 983, -17, 983, 38, 44, 36)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="floor2" unique_id=1932496777]
+polygon = PackedVector2Array(42, -15, 983, -17, 984, 38, 43, 36)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="floor2" unique_id=400103227]
+polygon = PackedVector2Array(42, -15, 983, -17, 984, 38, 43, 36)
+
+[node name="floor3" type="StaticBody2D" parent="." unique_id=920969855]
+modulate = Color(1, 0.2952768, 0.22982273, 1)
+position = Vector2(151, -265)
+rotation = 1.5707964
+
+[node name="Polygon2D" type="Polygon2D" parent="floor3" unique_id=673722499]
+polygon = PackedVector2Array(43, -15, 983, -17, 983, 38, 44, 36)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="floor3" unique_id=464623066]
+polygon = PackedVector2Array(42, -15, 983, -17, 984, 38, 43, 36)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="floor3" unique_id=1490833139]
+polygon = PackedVector2Array(42, -15, 983, -17, 984, 38, 43, 36)
+
+[node name="floor4" type="StaticBody2D" parent="." unique_id=581610878]
+modulate = Color(1, 0.2952768, 0.22982273, 1)
+position = Vector2(2053, -262)
+rotation = 1.5707964
+
+[node name="Polygon2D" type="Polygon2D" parent="floor4" unique_id=496488590]
+polygon = PackedVector2Array(43, -15, 983, -17, 983, 38, 44, 36)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="floor4" unique_id=1123203485]
+polygon = PackedVector2Array(42, -15, 983, -17, 984, 38, 43, 36)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="floor4" unique_id=1076299053]
+polygon = PackedVector2Array(42, -15, 983, -17, 984, 38, 43, 36)
+
+[node name="Barrel" parent="." unique_id=1008551793 instance=ExtResource("1_e5r6d")]
+position = Vector2(897, 601)
+
+[node name="Bouncable Barrel" parent="." unique_id=1272419484 instance=ExtResource("2_b6yo7")]
+position = Vector2(815, 601)
+
+[node name="Explodable Barrel" parent="." unique_id=1826813234 instance=ExtResource("3_3ny0r")]
+position = Vector2(699, 601)
+
+[node name="Prototype Rock" parent="." unique_id=397919312 instance=ExtResource("5_dxx7p")]
+position = Vector2(217, 649)
+
+[node name="Button" parent="." unique_id=527419653 instance=ExtResource("6_lethi")]
+position = Vector2(1180, 603)
+
+[node name="Door" parent="." unique_id=1435623570 instance=ExtResource("7_v85sp")]
+position = Vector2(1327, 599)
+door_open_offset = Vector2(0, -128)
+open_duration = 2.0
+
+[connection signal="on_button_press" from="Button" to="Door" method="open"]

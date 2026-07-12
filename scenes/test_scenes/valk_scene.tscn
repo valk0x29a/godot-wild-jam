@@ -67,19 +67,19 @@ scale = Vector2(0.38281193, 1)
 position = Vector2(677, 499)
 
 [node name="Player" parent="." unique_id=1839459392 instance=ExtResource("2_8iyis")]
-position = Vector2(435, 354)
+position = Vector2(394, 452)
 
 [node name="Barrel" parent="." unique_id=1008551793 instance=ExtResource("3_8iyis")]
-position = Vector2(220, 506)
+position = Vector2(196, 453)
 
 [node name="Barrel2" parent="." unique_id=100855862 instance=ExtResource("3_8iyis")]
-position = Vector2(248, 506)
+position = Vector2(270, 452)
 
 [node name="Bouncable Barrel" parent="." unique_id=585856788 instance=ExtResource("4_7pksr")]
 position = Vector2(311, 504)
 
 [node name="Explodable Barrel" parent="." unique_id=884577326 instance=ExtResource("6_kyxmm")]
-position = Vector2(281, 506)
+position = Vector2(575, 452)
 explode_required_force = 128.0
 explosion_force = 512.0
 

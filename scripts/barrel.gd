@@ -10,36 +10,51 @@ var is_thrown: bool = false;
 var explosion_area: Area2D;
 
 func _ready() -> void:
-    if(explodes_on_touch):
-        explosion_area = get_node("ExplosionArea");
-    is_thrown = false;
-    physics_material_override.bounce = bounciness;
+	if(explodes_on_touch):
+		explosion_area = get_node("ExplosionArea");
+	is_thrown = false;
+	physics_material_override.bounce = bounciness;
 
 func disable_physics():
-    freeze = true;
-    process_mode = Node.PROCESS_MODE_DISABLED;
+	global_rotation = 0
+	if %Sprite2D:
+		%Sprite2D.play("held")
+	freeze = true;
+	process_mode = Node.PROCESS_MODE_DISABLED;
 
 func enable_physics():
-    freeze = false;
-    process_mode = Node.PROCESS_MODE_PAUSABLE; 
+	if %Sprite2D:
+		if %Sprite2D.sprite_frames.has_animation('thrown'):
+			%Sprite2D.play("thrown")
+		else:
+			%Sprite2D.play("idle")
+		
+	freeze = false;
+	process_mode = Node.PROCESS_MODE_PAUSABLE; 
 
 func _on_barrel_trigger_body_entered(body: Node2D) -> void:
-    if(body.is_in_group("enemy")):
-        if(absf(linear_velocity.x) > absf(body.velocity.x)):
-            body.queue_free();
+	if(body.is_in_group("enemy")):
+		if(absf(linear_velocity.x) > absf(body.velocity.x)):
+			body.queue_free();
 
 func _on_body_entered(_body: Node) -> void:
-    if(!explodes_on_touch): return;
-    print(linear_velocity.length());
-    if(linear_velocity.length() > explode_required_force):
-        var nodes = explosion_area.get_overlapping_bodies();
-        for i in nodes.size():
-            var direction = (nodes[i].global_position - global_position).normalized();
-            if(nodes[i] is RigidBody2D):
-                var rigidbody: RigidBody2D = nodes[i];
-                rigidbody.apply_impulse(direction * explosion_force);
-            if(nodes[i] is Player):
-                print("game over");
-            if(nodes[i] is Enemy):
-                nodes[i].queue_free();
-        queue_free();
+	if(!explodes_on_touch): return;
+	print(linear_velocity.length());
+	if(linear_velocity.length() > explode_required_force):
+		var nodes = explosion_area.get_overlapping_bodies();
+		for i in nodes.size():
+			var direction = (nodes[i].global_position - global_position).normalized();
+			if(nodes[i] is RigidBody2D):
+				var rigidbody: RigidBody2D = nodes[i];
+				rigidbody.apply_impulse(direction * explosion_force);
+			if(nodes[i] is Player):
+				print("game over");
+			if(nodes[i] is Enemy):
+				nodes[i].queue_free();
+		explode()
+		queue_free();
+		
+func explode():
+	var effect = preload("uid://djyn8sj27sgd6").instantiate()
+	effect.global_position = global_position
+	add_sibling(effect)

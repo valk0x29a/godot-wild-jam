@@ -20,6 +20,7 @@ var is_flipped: bool = false;
 var throw_start_time: float;
 
 func _physics_process(delta: float) -> void:
+	handle_animation()
 	var input_x: float = Input.get_action_strength("Right") - Input.get_action_strength("Left");
 	if(input_x == 1.0): is_flipped = false;
 	elif(input_x == -1.0): is_flipped = true;
@@ -75,3 +76,13 @@ func _physics_process(delta: float) -> void:
 		var collision: KinematicCollision2D = get_slide_collision(i)
 		if(collision.get_collider() is RigidBody2D):
 			collision.get_collider().linear_velocity.x = input_x * PLAYER_SIZE * speed;
+			
+			
+func handle_animation():
+	if velocity and is_on_floor():
+		%Sprite2D.play("walk")
+	else:
+		%Sprite2D.play("idle")
+	%Sprite2D.flip_h = is_flipped
+	if not is_on_floor():
+		%Sprite2D.play("jump")

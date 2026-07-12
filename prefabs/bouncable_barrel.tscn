@@ -1,14 +1,109 @@
 [gd_scene format=3 uid="uid://eadexlx14bww"]
 
 [ext_resource type="Script" uid="uid://dyejnbc2xvn2w" path="res://scripts/barrel.gd" id="1_gsamw"]
-[ext_resource type="Texture2D" uid="uid://brramo03vm2ig" path="res://icon.svg" id="2_ty0dx"]
+[ext_resource type="Texture2D" uid="uid://dfu4sxr4xed1i" path="res://assets/sprites/sprite-sheets/bouncing-barrel-full-Sheet.png" id="2_gsamw"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_aifdq"]
 bounce = 0.9
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_8iyis"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gsamw"]
+atlas = ExtResource("2_gsamw")
+region = Rect2(0, 128, 128, 128)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_gsamw"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7tj8"]
+atlas = ExtResource("2_gsamw")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gy1s6"]
+atlas = ExtResource("2_gsamw")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wm0j8"]
+atlas = ExtResource("2_gsamw")
+region = Rect2(384, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ty0dx"]
+atlas = ExtResource("2_gsamw")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skf6t"]
+atlas = ExtResource("2_gsamw")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ubdn"]
+atlas = ExtResource("2_gsamw")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1s53o"]
+atlas = ExtResource("2_gsamw")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_avsqn"]
+atlas = ExtResource("2_gsamw")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgtw8"]
+atlas = ExtResource("2_gsamw")
+region = Rect2(128, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1qoc"]
+atlas = ExtResource("2_gsamw")
+region = Rect2(256, 256, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jeeod"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gsamw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7tj8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gy1s6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wm0j8")
+}],
+"loop": 1,
+"name": &"held",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ty0dx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skf6t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ubdn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1s53o")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_avsqn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lgtw8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1qoc")
+}],
+"loop": 0,
+"name": &"thrown",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ycrwg"]
+radius = 34.0
+height = 108.0
 
 [node name="Bouncable Barrel" type="RigidBody2D" unique_id=1008551793 groups=["barrel"]]
 collision_layer = 4
@@ -20,13 +115,16 @@ max_contacts_reported = 1
 script = ExtResource("1_gsamw")
 bounciness = 0.9
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1246450492]
-modulate = Color(1, 0.05882353, 1, 1)
-scale = Vector2(0.12499999, 0.12499999)
-texture = ExtResource("2_ty0dx")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1783556306]
+polygon = PackedVector2Array(-22, 63, 25, 63, 31, 35, 32, 7, 32, -15, 22, -38, 10, -42, -15, -42, -28, -35, -35, -5, -35, 23, -31, 48)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1885817650]
-shape = SubResource("CircleShape2D_8iyis")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1954687107]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_jeeod")
+animation = &"thrown"
+autoplay = "idle"
+frame = 2
+frame_progress = 1.0
 
 [node name="Barrel Trigger" type="Area2D" parent="." unique_id=1783007581]
 collision_layer = 0
@@ -34,6 +132,7 @@ collision_mask = 8
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Barrel Trigger" unique_id=346518931]
-shape = SubResource("CircleShape2D_gsamw")
+position = Vector2(-2, 10)
+shape = SubResource("CapsuleShape2D_ycrwg")
 
 [connection signal="body_entered" from="Barrel Trigger" to="." method="_on_barrel_trigger_body_entered"]
