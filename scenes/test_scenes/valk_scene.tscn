@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://eadexlx14bww" path="res://prefabs/bouncable_barrel.tscn" id="4_7pksr"]
 [ext_resource type="PackedScene" uid="uid://b71xxxmgpio42" path="res://prefabs/enemy.tscn" id="5_m0ksf"]
 [ext_resource type="PackedScene" uid="uid://cpo2u87gmon1o" path="res://prefabs/explodable_barrel.tscn" id="6_kyxmm"]
+[ext_resource type="PackedScene" uid="uid://bv4nxvf3716i6" path="res://prefabs/door.tscn" id="7_ggiy1"]
+[ext_resource type="PackedScene" uid="uid://becukr2fpntm5" path="res://prefabs/button.tscn" id="8_aae26"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jsvff"]
 size = Vector2(1142, 128)
@@ -74,6 +76,18 @@ position = Vector2(311, 504)
 [node name="Explodable Barrel" parent="." unique_id=884577326 instance=ExtResource("6_kyxmm")]
 position = Vector2(281, 506)
 explode_required_force = 128.0
+
+[node name="Door" parent="." unique_id=1435623570 instance=ExtResource("7_ggiy1")]
+position = Vector2(725, 452)
+door_open_offset = Vector2(0, -64)
+open_duration = 1.0
+
+[node name="Button" parent="." unique_id=527419653 instance=ExtResource("8_aae26")]
+position = Vector2(691, 403)
+rotation = -1.5707964
+scale = Vector2(0.25, 0.25)
+
+[connection signal="on_button_press" from="Button" to="Door" method="open"]
 
 [editable path="PrototypeBlock"]
 [editable path="PrototypeBlock2"]
