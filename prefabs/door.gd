@@ -7,8 +7,6 @@ var is_opening: bool = false;
 
 func _physics_process(delta: float) -> void:
     if(is_opening):
-        global_position += door_open_offset * delta / open_duration;
-
         var reached_x: bool;
         var reached_y: bool;
         if(door_open_offset.x > 0):
@@ -24,6 +22,8 @@ func _physics_process(delta: float) -> void:
         if(door_open_offset.y == 0): reached_y = true;
 
         is_opening = !reached_x || !reached_y;
+        if(!is_opening): return;
+        global_position += door_open_offset * delta / open_duration;
 
 
 func open(): is_opening = true;
