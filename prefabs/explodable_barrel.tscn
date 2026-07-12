@@ -80,7 +80,7 @@ radius = 33.0
 height = 108.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nd1ib"]
-radius = 73.02739
+radius = 128.01563
 
 [node name="Explodable Barrel" type="RigidBody2D" unique_id=1008551793 groups=["barrel"]]
 collision_layer = 4
