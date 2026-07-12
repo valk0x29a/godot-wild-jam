@@ -72,9 +72,12 @@ position = Vector2(897, 601)
 
 [node name="Bouncable Barrel" parent="." unique_id=1272419484 instance=ExtResource("2_b6yo7")]
 position = Vector2(815, 601)
+bounciness = 1.3
 
 [node name="Explodable Barrel" parent="." unique_id=1826813234 instance=ExtResource("3_3ny0r")]
 position = Vector2(699, 601)
+explode_required_force = 100.0
+explosion_force = 800.0
 
 [node name="Prototype Rock" parent="." unique_id=397919312 instance=ExtResource("5_dxx7p")]
 position = Vector2(217, 649)
