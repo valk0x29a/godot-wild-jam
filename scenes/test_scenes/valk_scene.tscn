@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cl27gtgh5ujsr" path="res://prefabs/barrel.tscn" id="3_8iyis"]
 [ext_resource type="PackedScene" uid="uid://eadexlx14bww" path="res://prefabs/bouncable_barrel.tscn" id="4_7pksr"]
 [ext_resource type="PackedScene" uid="uid://b71xxxmgpio42" path="res://prefabs/enemy.tscn" id="5_m0ksf"]
+[ext_resource type="PackedScene" uid="uid://cpo2u87gmon1o" path="res://prefabs/explodable_barrel.tscn" id="6_kyxmm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jsvff"]
 size = Vector2(1142, 128)
@@ -69,6 +70,10 @@ position = Vector2(248, 506)
 
 [node name="Bouncable Barrel" parent="." unique_id=585856788 instance=ExtResource("4_7pksr")]
 position = Vector2(311, 504)
+
+[node name="Explodable Barrel" parent="." unique_id=884577326 instance=ExtResource("6_kyxmm")]
+position = Vector2(281, 506)
+explode_required_force = 128.0
 
 [editable path="PrototypeBlock"]
 [editable path="PrototypeBlock2"]

@@ -15,7 +15,7 @@ jump_force = 9.8
 coyotte_time = 0.1
 barrel_interaction_range = 2.0
 barrel_offset = Vector2(0, -1)
-throw_force = Vector2(8, -8)
+throw_force_ref = Vector2(8, -8)
 throw_hold_time_for_ref = 0.5
 max_throw_hold_time = 2.0
 

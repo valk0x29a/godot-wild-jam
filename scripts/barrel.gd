@@ -3,6 +3,8 @@ class_name Barrel
 
 var is_thrown: bool = false;
 @export var bounciness: float = 0.0;
+@export var explodes_on_touch: bool = false;
+@export var explode_required_force: float = 0.0;
 
 func _ready() -> void:
     is_thrown = false;
@@ -20,3 +22,9 @@ func _on_barrel_trigger_body_entered(body: Node2D) -> void:
     if(body.is_in_group("enemy")):
         if(absf(linear_velocity.x) > absf(body.velocity.x)):
             body.queue_free();
+
+func _on_body_entered(_body: Node) -> void:
+    if(!explodes_on_touch): return;
+    print(linear_velocity.length());
+    if(linear_velocity.length() > explode_required_force):
+        queue_free();

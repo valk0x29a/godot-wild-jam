@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cpo2u87gmon1o"]
+
+[ext_resource type="Script" uid="uid://dyejnbc2xvn2w" path="res://scripts/barrel.gd" id="1_i1xok"]
+[ext_resource type="Texture2D" uid="uid://brramo03vm2ig" path="res://icon.svg" id="2_3u64i"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_aifdq"]
+bounce = 0.9
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8iyis"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_16d1p"]
+
+[node name="Explodable Barrel" type="RigidBody2D" unique_id=1008551793 groups=["barrel"]]
+collision_layer = 4
+physics_material_override = SubResource("PhysicsMaterial_aifdq")
+can_sleep = false
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_i1xok")
+explodes_on_touch = true
+explode_required_force = 256.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1246450492]
+modulate = Color(0.90366024, 0.12701434, 0.15150803, 1)
+scale = Vector2(0.12499999, 0.12499999)
+texture = ExtResource("2_3u64i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1885817650]
+shape = SubResource("CircleShape2D_8iyis")
+
+[node name="Barrel Trigger" type="Area2D" parent="." unique_id=429074671]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barrel Trigger" unique_id=1776047726]
+shape = SubResource("CircleShape2D_16d1p")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="area_entered" from="Barrel Trigger" to="." method="_on_barrel_trigger_area_entered"]
+[connection signal="body_entered" from="Barrel Trigger" to="." method="_on_barrel_trigger_body_entered"]

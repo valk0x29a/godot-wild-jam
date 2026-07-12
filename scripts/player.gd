@@ -7,7 +7,7 @@ class_name Player
 @export var coyotte_time: float;
 @export var barrel_interaction_range: float;
 @export var barrel_offset: Vector2;
-@export var throw_force: Vector2;
+@export var throw_force_ref: Vector2;
 @export var throw_hold_time_for_ref: float;
 @export var max_throw_hold_time: float;
 
@@ -34,14 +34,14 @@ func _physics_process(delta: float) -> void:
 		if(Input.is_action_just_released("Throw")):
 			var hold_time: float = (Time.get_ticks_msec() - throw_start_time) / 1000 / throw_hold_time_for_ref;
 			hold_time = minf(hold_time, max_throw_hold_time);
+
 			chosen_barrel.enable_physics();
-			var throw_vec: Vector2 = Vector2(throw_force.x, throw_force.y);
+			var throw_vec: Vector2 = Vector2(throw_force_ref.x, throw_force_ref.y);
 			if(is_flipped): throw_vec.x = -throw_vec.x;
 			throw_vec *= PLAYER_SIZE;
 			throw_vec.y *= hold_time;
 			throw_vec += velocity;
 			chosen_barrel.apply_impulse(throw_vec);
-			# chosen_barrel.is_thrown = true;
 			chosen_barrel = null;
 	if(Input.is_action_just_pressed("Interact")):
 		if(chosen_barrel == null):
