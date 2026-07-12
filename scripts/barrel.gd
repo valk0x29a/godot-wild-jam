@@ -5,8 +5,13 @@ var is_thrown: bool = false;
 @export var bounciness: float = 0.0;
 @export var explodes_on_touch: bool = false;
 @export var explode_required_force: float = 0.0;
+@export var explosion_force: float;
+
+var explosion_area: Area2D;
 
 func _ready() -> void:
+    if(explodes_on_touch):
+        explosion_area = get_node("ExplosionArea");
     is_thrown = false;
     physics_material_override.bounce = bounciness;
 
@@ -27,4 +32,14 @@ func _on_body_entered(_body: Node) -> void:
     if(!explodes_on_touch): return;
     print(linear_velocity.length());
     if(linear_velocity.length() > explode_required_force):
+        var nodes = explosion_area.get_overlapping_bodies();
+        for i in nodes.size():
+            var direction = (nodes[i].global_position - global_position).normalized();
+            if(nodes[i] is RigidBody2D):
+                var rigidbody: RigidBody2D = nodes[i];
+                rigidbody.apply_impulse(direction * explosion_force);
+            if(nodes[i] is Player):
+                print("game over");
+            if(nodes[i] is Enemy):
+                nodes[i].queue_free();
         queue_free();

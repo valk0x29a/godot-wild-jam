@@ -12,6 +12,7 @@ bounce = 0.9
 
 [node name="Bouncable Barrel" type="RigidBody2D" unique_id=1008551793 groups=["barrel"]]
 collision_layer = 4
+collision_mask = 5
 physics_material_override = SubResource("PhysicsMaterial_aifdq")
 can_sleep = false
 contact_monitor = true

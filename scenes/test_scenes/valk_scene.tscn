@@ -8,12 +8,17 @@
 [ext_resource type="PackedScene" uid="uid://cpo2u87gmon1o" path="res://prefabs/explodable_barrel.tscn" id="6_kyxmm"]
 [ext_resource type="PackedScene" uid="uid://bv4nxvf3716i6" path="res://prefabs/door.tscn" id="7_ggiy1"]
 [ext_resource type="PackedScene" uid="uid://becukr2fpntm5" path="res://prefabs/button.tscn" id="8_aae26"]
+[ext_resource type="PackedScene" uid="uid://eeiq2l8245eo" path="res://prefabs/fan.tscn" id="9_snwol"]
+[ext_resource type="PackedScene" uid="uid://pbtvdudegxiq" path="res://prefabs/prototype_rock.tscn" id="10_uiet3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jsvff"]
 size = Vector2(1142, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8iyis"]
 size = Vector2(48, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_snwol"]
+size = Vector2(203, 64)
 
 [node name="GameScene" type="Node2D" unique_id=780738810]
 
@@ -76,6 +81,7 @@ position = Vector2(311, 504)
 [node name="Explodable Barrel" parent="." unique_id=884577326 instance=ExtResource("6_kyxmm")]
 position = Vector2(281, 506)
 explode_required_force = 128.0
+explosion_force = 512.0
 
 [node name="Door" parent="." unique_id=1435623570 instance=ExtResource("7_ggiy1")]
 position = Vector2(725, 452)
@@ -87,9 +93,22 @@ position = Vector2(691, 403)
 rotation = -1.5707964
 scale = Vector2(0.25, 0.25)
 
+[node name="Fan" parent="." unique_id=1844464575 instance=ExtResource("9_snwol")]
+position = Vector2(53, 481)
+force = 8.0
+
+[node name="CollisionShape2D" parent="Fan/Fan Trigger" parent_id_path=PackedInt32Array(1844464575, 182248684) index="0" unique_id=82784684]
+position = Vector2(142.5, 0)
+shape = SubResource("RectangleShape2D_snwol")
+
+[node name="Prototype Rock" parent="." unique_id=397919312 instance=ExtResource("10_uiet3")]
+position = Vector2(726, 371)
+collision_layer = 17
+
 [connection signal="on_button_press" from="Button" to="Door" method="open"]
 
 [editable path="PrototypeBlock"]
 [editable path="PrototypeBlock2"]
 [editable path="PrototypeBlock3"]
 [editable path="PrototypeBlock4"]
+[editable path="Fan"]
