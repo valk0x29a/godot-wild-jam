@@ -148,7 +148,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"jump",
-"speed": 1.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -200,8 +200,10 @@ max_throw_hold_time = 2.0
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1789979780]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_jeeod")
-animation = &"idle"
+animation = &"jump"
 autoplay = "idle"
+frame = 1
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=307286596]
 position = Vector2(-5, 9)
