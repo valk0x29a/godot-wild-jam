@@ -86,7 +86,7 @@ position = Vector2(217, 649)
 position = Vector2(1180, 603)
 
 [node name="Door" parent="." unique_id=1435623570 instance=ExtResource("7_v85sp")]
-position = Vector2(1327, 599)
+position = Vector2(1302, 611)
 door_open_offset = Vector2(0, -128)
 open_duration = 2.0
 

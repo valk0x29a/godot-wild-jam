@@ -4,6 +4,7 @@ extends StaticBody2D
 @onready var original_pos: Vector2 = global_position;
 @export var open_duration: float;
 var is_opening: bool = false;
+var played = false
 
 func _physics_process(delta: float) -> void:
 	if(is_opening):
@@ -26,4 +27,8 @@ func _physics_process(delta: float) -> void:
 		global_position += door_open_offset * delta / open_duration;
 
 
-func open(): is_opening = true;
+func open(): 
+	is_opening = true;
+	if not played:
+		%Sprite2D.play("open")
+		played = true

@@ -1,17 +1,84 @@
 [gd_scene format=3 uid="uid://bv4nxvf3716i6"]
 
 [ext_resource type="Script" uid="uid://dc7b456u3h8kb" path="res://scripts/door.gd" id="1_qfj2i"]
-[ext_resource type="Texture2D" uid="uid://brramo03vm2ig" path="res://icon.svg" id="1_sum4q"]
+[ext_resource type="Texture2D" uid="uid://dsni7qq6pwitc" path="res://assets/sprites/sprite-sheets/door-full-Sheet.png" id="2_qfj2i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gx6vt"]
+atlas = ExtResource("2_qfj2i")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iv2is"]
+atlas = ExtResource("2_qfj2i")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08et4"]
+atlas = ExtResource("2_qfj2i")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aprx7"]
+atlas = ExtResource("2_qfj2i")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rofyl"]
+atlas = ExtResource("2_qfj2i")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2mko4"]
+atlas = ExtResource("2_qfj2i")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_okmk8"]
+atlas = ExtResource("2_qfj2i")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jeeod"]
+animations = [{
+"frames": [{
+"duration": 10.0,
+"texture": SubResource("AtlasTexture_gx6vt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iv2is")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08et4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aprx7")
+}],
+"loop": 2,
+"name": &"default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rofyl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2mko4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_okmk8")
+}],
+"loop": 0,
+"name": &"open",
+"speed": 10.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ayko1"]
-size = Vector2(32, 128)
+size = Vector2(23, 117)
 
 [node name="Door" type="StaticBody2D" unique_id=1435623570]
 script = ExtResource("1_qfj2i")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=516903937]
-shape = SubResource("RectangleShape2D_ayko1")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=458743560]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_jeeod")
+animation = &"open"
+autoplay = "default"
+frame = 2
+frame_progress = 1.0
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=256644627]
-scale = Vector2(0.25, 1)
-texture = ExtResource("1_sum4q")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=516903937]
+position = Vector2(0.5, -3.5)
+shape = SubResource("RectangleShape2D_ayko1")
