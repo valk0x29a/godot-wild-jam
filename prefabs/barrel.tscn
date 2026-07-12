@@ -8,6 +8,8 @@ bounce = 0.9
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8iyis"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_16d1p"]
+
 [node name="Barrel" type="RigidBody2D" unique_id=1008551793 groups=["barrel"]]
 collision_layer = 4
 physics_material_override = SubResource("PhysicsMaterial_aifdq")
@@ -22,3 +24,14 @@ texture = ExtResource("1_yrrnx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1885817650]
 shape = SubResource("CircleShape2D_8iyis")
+
+[node name="Barrel Trigger" type="Area2D" parent="." unique_id=429074671]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barrel Trigger" unique_id=1776047726]
+shape = SubResource("CircleShape2D_16d1p")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="area_entered" from="Barrel Trigger" to="." method="_on_barrel_trigger_area_entered"]
+[connection signal="body_entered" from="Barrel Trigger" to="." method="_on_barrel_trigger_body_entered"]

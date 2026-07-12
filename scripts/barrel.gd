@@ -15,3 +15,8 @@ func disable_physics():
 func enable_physics():
     freeze = false;
     process_mode = Node.PROCESS_MODE_PAUSABLE; 
+
+func _on_barrel_trigger_body_entered(body: Node2D) -> void:
+    if(body.is_in_group("enemy")):
+        if(absf(linear_velocity.x) > absf(body.velocity.x)):
+            body.queue_free();

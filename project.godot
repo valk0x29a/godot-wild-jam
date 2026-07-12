@@ -37,6 +37,7 @@ folder_colors={
 [global_group]
 
 barrel=""
+enemy=""
 
 [input]
 
@@ -72,6 +73,7 @@ Throw={
 2d_physics/layer_1="Default"
 2d_physics/layer_2="Player"
 2d_physics/layer_3="Barrel"
+2d_physics/layer_4="Enemy"
 
 [physics]
 

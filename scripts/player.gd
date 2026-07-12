@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 @export var speed: float;
 @export var gravity: float;
@@ -7,12 +8,16 @@ extends CharacterBody2D
 @export var barrel_interaction_range: float;
 @export var barrel_offset: Vector2;
 @export var throw_force: Vector2;
+@export var throw_hold_time_for_ref: float;
+@export var max_throw_hold_time: float;
 
 var PLAYER_SIZE: float = 32.0;
 
 var not_grounded_timer: float = 0.0;
 var chosen_barrel: Barrel = null;	
 var is_flipped: bool = false;
+
+var throw_start_time: float;
 
 func _physics_process(delta: float) -> void:
 	var input_x: float = Input.get_action_strength("Right") - Input.get_action_strength("Left");
@@ -25,10 +30,15 @@ func _physics_process(delta: float) -> void:
 	if(chosen_barrel != null):
 		chosen_barrel.global_position = global_position + (barrel_offset * PLAYER_SIZE);
 		if(Input.is_action_just_pressed("Throw")):
+			throw_start_time = Time.get_ticks_msec();
+		if(Input.is_action_just_released("Throw")):
+			var hold_time: float = (Time.get_ticks_msec() - throw_start_time) / 1000 / throw_hold_time_for_ref;
+			hold_time = minf(hold_time, max_throw_hold_time);
 			chosen_barrel.enable_physics();
 			var throw_vec: Vector2 = Vector2(throw_force.x, throw_force.y);
 			if(is_flipped): throw_vec.x = -throw_vec.x;
 			throw_vec *= PLAYER_SIZE;
+			throw_vec.y *= hold_time;
 			throw_vec += velocity;
 			chosen_barrel.apply_impulse(throw_vec);
 			# chosen_barrel.is_thrown = true;
