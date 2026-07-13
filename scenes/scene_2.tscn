@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://ch5vemkmh3r6o"]
+
+[ext_resource type="PackedScene" uid="uid://clnu47p5k0w8n" path="res://prefabs/player.tscn" id="1_vsrvg"]
+[ext_resource type="PackedScene" uid="uid://dy83k5bsh4m4" path="res://prefabs/prototype_block.tscn" id="2_02v7m"]
+
+[node name="Scene2" type="Node2D" unique_id=575129649]
+
+[node name="Player" parent="." unique_id=75895601 instance=ExtResource("1_vsrvg")]
+position = Vector2(180, 128)
+
+[node name="PrototypeBlock" parent="." unique_id=1170064865 instance=ExtResource("2_02v7m")]
+position = Vector2(177, 258)

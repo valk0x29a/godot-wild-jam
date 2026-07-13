@@ -18,8 +18,17 @@ var chosen_barrel: Barrel = null;
 var is_flipped: bool = false;
 
 var throw_start_time: float;
+@onready var throw_ui: VSlider = get_node("VSlider");
+var throw_started: bool = false;
 
 func _physics_process(delta: float) -> void:
+	if(throw_started):
+		throw_ui.visible = true;
+		var hold_time: float = (Time.get_ticks_msec() - throw_start_time) / 1000 / throw_hold_time_for_ref;
+		hold_time = minf(hold_time, max_throw_hold_time);
+		throw_ui.value = hold_time / max_throw_hold_time * 100;
+	else:
+		throw_ui.visible = false;
 	handle_animation()
 	var input_x: float = Input.get_action_strength("Right") - Input.get_action_strength("Left");
 	if(input_x == 1.0): is_flipped = false;
@@ -32,7 +41,9 @@ func _physics_process(delta: float) -> void:
 		chosen_barrel.global_position = global_position + (barrel_offset * PLAYER_SIZE);
 		if(Input.is_action_just_pressed("Throw")):
 			throw_start_time = Time.get_ticks_msec();
+			throw_started = true;
 		if(Input.is_action_just_released("Throw")):
+			throw_started = false;
 			var hold_time: float = (Time.get_ticks_msec() - throw_start_time) / 1000 / throw_hold_time_for_ref;
 			hold_time = minf(hold_time, max_throw_hold_time);
 
