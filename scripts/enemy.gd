@@ -19,8 +19,9 @@ func _physics_process(delta: float) -> void:
 	if state == 'follow':
 		attack_timer = attack_delay;
 		direction = global_position.direction_to(player.global_position)
-		velocity = direction * ENEMY_SIZE * speed;
+		velocity.x = direction.x * ENEMY_SIZE * speed;
 	elif state == 'attack':
+		player.is_player_locked = true;
 		velocity = Vector2.ZERO
 		attack_timer -= delta;
 		if(attack_timer <= 0):
