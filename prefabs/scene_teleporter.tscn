@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b01jop1i1o0vb" path="res://scripts/scene_teleporter.gd" id="1_hnxtj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_16d1p"]
-size = Vector2(32, 32)
+size = Vector2(32, 128)
 
 [node name="SceneTeleporter" type="Area2D" unique_id=1448952218]
 collision_layer = 0

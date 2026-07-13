@@ -1,3 +1,63 @@
 [gd_scene format=3 uid="uid://kxprwdxhktis"]
 
+[ext_resource type="PackedScene" uid="uid://dy83k5bsh4m4" path="res://prefabs/prototype_block.tscn" id="1_ka884"]
+[ext_resource type="PackedScene" uid="uid://clnu47p5k0w8n" path="res://prefabs/player.tscn" id="2_cn2eb"]
+[ext_resource type="PackedScene" uid="uid://bv4nxvf3716i6" path="res://prefabs/door.tscn" id="3_lki8s"]
+[ext_resource type="PackedScene" uid="uid://becukr2fpntm5" path="res://prefabs/button.tscn" id="4_t6bmd"]
+[ext_resource type="PackedScene" uid="uid://cl27gtgh5ujsr" path="res://prefabs/barrel.tscn" id="5_d7a6c"]
+[ext_resource type="PackedScene" uid="uid://b71xxxmgpio42" path="res://prefabs/enemy.tscn" id="6_t6bmd"]
+[ext_resource type="PackedScene" uid="uid://k1tgehm75ndm" path="res://prefabs/scene_teleporter.tscn" id="7_d7a6c"]
+[ext_resource type="PackedScene" uid="uid://d1m8grixfdg24" path="res://prefabs/game_over_trigger.tscn" id="8_g2j0d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p837x"]
+size = Vector2(5373, 1362)
+
 [node name="Scene1" type="Node2D" unique_id=1417817506]
+
+[node name="Player" parent="." unique_id=75895601 instance=ExtResource("2_cn2eb")]
+position = Vector2(56, 355)
+
+[node name="PrototypeBlock" parent="." unique_id=1170064865 instance=ExtResource("1_ka884")]
+position = Vector2(320, 745)
+scale = Vector2(5, 5)
+
+[node name="PrototypeBlock2" parent="." unique_id=280344901 instance=ExtResource("1_ka884")]
+position = Vector2(961.99994, 745)
+scale = Vector2(5, 5)
+
+[node name="PrototypeBlock3" parent="." unique_id=1832170974 instance=ExtResource("1_ka884")]
+position = Vector2(1608, 745)
+scale = Vector2(5, 5)
+
+[node name="PrototypeBlock4" parent="." unique_id=996975229 instance=ExtResource("1_ka884")]
+position = Vector2(2248.9998, 745)
+scale = Vector2(5, 5)
+
+[node name="Door" parent="." unique_id=1435623570 instance=ExtResource("3_lki8s")]
+position = Vector2(642, 370)
+door_open_offset = Vector2(0, -128)
+open_duration = 1.0
+
+[node name="Button" parent="." unique_id=527419653 instance=ExtResource("4_t6bmd")]
+position = Vector2(760, 361)
+
+[node name="Barrel" parent="." unique_id=1008551793 instance=ExtResource("5_d7a6c")]
+position = Vector2(408, 362)
+
+[node name="Enemy" parent="." unique_id=1239631154 instance=ExtResource("6_t6bmd")]
+position = Vector2(1589, 363)
+
+[node name="SceneTeleporter" parent="." unique_id=1448952218 instance=ExtResource("7_d7a6c")]
+position = Vector2(2452, 419)
+scene_name = "scene_2"
+
+[node name="GameOverTrigger" parent="." unique_id=401480968 instance=ExtResource("8_g2j0d")]
+position = Vector2(-186, 1441)
+
+[node name="CollisionShape2D" parent="GameOverTrigger" index="0" unique_id=105444383]
+position = Vector2(1266.5, 665)
+shape = SubResource("RectangleShape2D_p837x")
+
+[connection signal="on_button_press" from="Button" to="Door" method="open"]
+
+[editable path="GameOverTrigger"]
