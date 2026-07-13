@@ -18,7 +18,7 @@ var chosen_barrel: Barrel = null;
 var is_flipped: bool = false;
 
 var throw_start_time: float;
-@onready var throw_ui: VSlider = get_node("VSlider");
+@onready var throw_ui: TextureProgressBar = %VSlider;
 var throw_started: bool = false;
 
 func _physics_process(delta: float) -> void:

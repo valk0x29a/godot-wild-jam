@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dkxqlo5ktyyac" path="res://scripts/player.gd" id="1_72ieh"]
 [ext_resource type="Texture2D" uid="uid://bxq5rn8tkmp7y" path="res://assets/sprites/sprite-sheets/monkey-full-Sheet.png" id="2_4dohe"]
+[ext_resource type="Texture2D" uid="uid://cwi0kk5i6oqsh" path="res://assets/sprites/banana_bar_back.png" id="3_ht1c8"]
+[ext_resource type="Texture2D" uid="uid://bltcdxpxokwim" path="res://assets/sprites/banana_bar_front.png" id="4_g2jcq"]
+[ext_resource type="Texture2D" uid="uid://bmxvibubgp2o3" path="res://assets/sprites/banana_bar_fill.png" id="5_u51tk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8rb0w"]
 atlas = ExtResource("2_4dohe")
@@ -149,8 +152,13 @@ shape = SubResource("CapsuleShape2D_w0ydi")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=270729757]
 position_smoothing_enabled = true
 
-[node name="VSlider" type="VSlider" parent="." unique_id=164786564]
-offset_left = -79.0
-offset_top = -46.0
-offset_right = -63.0
-offset_bottom = 18.0
+[node name="VSlider" type="TextureProgressBar" parent="." unique_id=1753669476]
+unique_name_in_owner = true
+offset_left = -145.0
+offset_top = -70.0
+offset_right = -17.0
+offset_bottom = 58.0
+fill_mode = 3
+texture_under = ExtResource("3_ht1c8")
+texture_over = ExtResource("4_g2jcq")
+texture_progress = ExtResource("5_u51tk")
