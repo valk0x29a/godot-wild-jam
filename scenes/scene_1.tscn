@@ -48,7 +48,7 @@ position = Vector2(408, 362)
 position = Vector2(1589, 363)
 
 [node name="SceneTeleporter" parent="." unique_id=1448952218 instance=ExtResource("7_d7a6c")]
-position = Vector2(2452, 419)
+position = Vector2(2387, 350)
 scene_name = "scene_2"
 
 [node name="GameOverTrigger" parent="." unique_id=401480968 instance=ExtResource("8_g2j0d")]

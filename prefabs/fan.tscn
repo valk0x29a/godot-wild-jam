@@ -79,18 +79,21 @@ position = Vector2(128, 12)
 shape = SubResource("RectangleShape2D_o40uj")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1288295307]
+unique_name_in_owner = true
 position = Vector2(-17, 20)
 amount = 6
 local_coords = true
 process_material = SubResource("ParticleProcessMaterial_jeeod")
 
 [node name="GPUParticles2D2" type="GPUParticles2D" parent="." unique_id=2031639801]
+unique_name_in_owner = true
 position = Vector2(-16, 25)
 amount = 6
 local_coords = true
 process_material = SubResource("ParticleProcessMaterial_jeeod")
 
 [node name="GPUParticles2D3" type="GPUParticles2D" parent="." unique_id=1426126030]
+unique_name_in_owner = true
 position = Vector2(-17, 17)
 amount = 6
 local_coords = true

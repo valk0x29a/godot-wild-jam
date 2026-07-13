@@ -1,16 +1,65 @@
 [gd_scene format=3 uid="uid://k1tgehm75ndm"]
 
 [ext_resource type="Script" uid="uid://b01jop1i1o0vb" path="res://scripts/scene_teleporter.gd" id="1_hnxtj"]
+[ext_resource type="Texture2D" uid="uid://djk0s8pnr72ir" path="res://assets/sprites/sprite-sheets/exit-door-full-sheet.png" id="2_1mdtj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kv5qr"]
+atlas = ExtResource("2_1mdtj")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v64bw"]
+atlas = ExtResource("2_1mdtj")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_45cgw"]
+atlas = ExtResource("2_1mdtj")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6as3"]
+atlas = ExtResource("2_1mdtj")
+region = Rect2(450, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqnkp"]
+atlas = ExtResource("2_1mdtj")
+region = Rect2(600, 0, 150, 150)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jeeod"]
+animations = [{
+"frames": [{
+"duration": 10.0,
+"texture": SubResource("AtlasTexture_kv5qr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v64bw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45cgw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x6as3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yqnkp")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_16d1p"]
-size = Vector2(32, 128)
+size = Vector2(107, 126)
 
 [node name="SceneTeleporter" type="Area2D" unique_id=1448952218]
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_hnxtj")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1986596630]
+sprite_frames = SubResource("SpriteFrames_jeeod")
+autoplay = "default"
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2069822608]
+position = Vector2(-2.5, 12)
 shape = SubResource("RectangleShape2D_16d1p")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

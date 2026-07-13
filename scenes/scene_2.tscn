@@ -117,4 +117,3 @@ scene_name = "scene_3"
 [connection signal="on_button_press" from="Button2" to="Door" method="open"]
 
 [editable path="GameOverTrigger"]
-[editable path="Fan"]
