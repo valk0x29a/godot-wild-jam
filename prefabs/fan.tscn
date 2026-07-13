@@ -39,6 +39,9 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oy8pt"]
+size = Vector2(29, 85)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o40uj"]
 size = Vector2(288, 64)
 
@@ -58,13 +61,15 @@ scale_over_velocity_max = 204.0
 
 [node name="Fan" type="StaticBody2D" unique_id=1844464575]
 script = ExtResource("1_o40uj")
+force = 8.0
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=774339207]
 sprite_frames = SubResource("SpriteFrames_jeeod")
 autoplay = "default"
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="." unique_id=2071912908]
-polygon = PackedVector2Array(-22, -20, -15, -9, -12, 13, -9, 23, -4, 39, 6, 48, 23, 52, 38, 55, 29, 62, -7, 63, -19, 53, -27, 32, -34, 14, -31, -11)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=600157727]
+position = Vector2(-22, 22)
+shape = SubResource("RectangleShape2D_oy8pt")
 
 [node name="Fan Trigger" type="Area2D" parent="." unique_id=182248684]
 collision_mask = 14
