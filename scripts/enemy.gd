@@ -4,6 +4,7 @@ class_name Enemy
 @export var speed: float;
 @export var gravity: float;
 @export var attack_delay: float;
+@export var attack_range:float  = 50.0
 var ENEMY_SIZE: float = 32.0;
 var state: String = 'follow'
 var direction: Vector2;
@@ -30,7 +31,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide();
 
 func check_state():
-	if global_position.distance_to(player.global_position) > 50:
+	if global_position.distance_to(player.global_position) > attack_range:
 		state = 'follow'
 	else:
 		state = 'attack'
