@@ -3,6 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://clnu47p5k0w8n" path="res://prefabs/player.tscn" id="1_vsrvg"]
 [ext_resource type="PackedScene" uid="uid://dy83k5bsh4m4" path="res://prefabs/prototype_block.tscn" id="2_02v7m"]
 [ext_resource type="PackedScene" uid="uid://d1m8grixfdg24" path="res://prefabs/game_over_trigger.tscn" id="3_02v7m"]
+[ext_resource type="PackedScene" uid="uid://bv4nxvf3716i6" path="res://prefabs/door.tscn" id="4_mejfh"]
+[ext_resource type="PackedScene" uid="uid://cl27gtgh5ujsr" path="res://prefabs/barrel.tscn" id="5_yun4j"]
+[ext_resource type="PackedScene" uid="uid://eeiq2l8245eo" path="res://prefabs/fan.tscn" id="6_qo03w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mejfh"]
 size = Vector2(5373, 1362)
@@ -13,7 +16,12 @@ size = Vector2(5373, 1362)
 position = Vector2(180, 128)
 
 [node name="PrototypeBlock" parent="." unique_id=1170064865 instance=ExtResource("2_02v7m")]
-position = Vector2(177, 258)
+position = Vector2(304, 511.00003)
+scale = Vector2(5, 5)
+
+[node name="PrototypeBlock2" parent="." unique_id=230863990 instance=ExtResource("2_02v7m")]
+position = Vector2(944.99994, 511)
+scale = Vector2(5, 5)
 
 [node name="GameOverTrigger" parent="." unique_id=401480968 instance=ExtResource("3_02v7m")]
 position = Vector2(-186, 1441)
@@ -22,4 +30,67 @@ position = Vector2(-186, 1441)
 position = Vector2(1266.5, 665)
 shape = SubResource("RectangleShape2D_mejfh")
 
+[node name="Door" parent="." unique_id=1435623570 instance=ExtResource("4_mejfh")]
+position = Vector2(726, 139)
+
+[node name="PrototypeBlock3" parent="." unique_id=512524369 instance=ExtResource("2_02v7m")]
+position = Vector2(773, 12)
+
+[node name="PrototypeBlock4" parent="." unique_id=607175044 instance=ExtResource("2_02v7m")]
+position = Vector2(770, -239)
+
+[node name="PrototypeBlock5" parent="." unique_id=1165361609 instance=ExtResource("2_02v7m")]
+position = Vector2(1006, 8)
+
+[node name="Door2" parent="." unique_id=1979779173 instance=ExtResource("4_mejfh")]
+position = Vector2(1127, -44)
+rotation = 1.5707964
+door_open_offset = Vector2(128, 0)
+
+[node name="Barrel" parent="." unique_id=1008551793 instance=ExtResource("5_yun4j")]
+position = Vector2(1127, -121)
+
+[node name="PrototypeBlock6" parent="." unique_id=1387915161 instance=ExtResource("2_02v7m")]
+position = Vector2(1008, -122)
+
+[node name="PrototypeBlock7" parent="." unique_id=2105782449 instance=ExtResource("2_02v7m")]
+position = Vector2(1254, 9)
+
+[node name="PrototypeBlock8" parent="." unique_id=235470414 instance=ExtResource("2_02v7m")]
+position = Vector2(1256, -121)
+
+[node name="PrototypeBlock9" parent="." unique_id=126058667 instance=ExtResource("2_02v7m")]
+position = Vector2(1258, -251)
+
+[node name="Barrel2" parent="." unique_id=687429155 instance=ExtResource("5_yun4j")]
+position = Vector2(1157, -184)
+
+[node name="Barrel3" parent="." unique_id=986633085 instance=ExtResource("5_yun4j")]
+position = Vector2(1162, -253)
+
+[node name="Barrel4" parent="." unique_id=78216766 instance=ExtResource("5_yun4j")]
+position = Vector2(1163, -322)
+
+[node name="PrototypeBlock10" parent="." unique_id=1969114158 instance=ExtResource("2_02v7m")]
+position = Vector2(1007, -253)
+
+[node name="Fan" parent="." unique_id=1844464575 instance=ExtResource("6_qo03w")]
+position = Vector2(1242, 123)
+
+[node name="Sprite2D" parent="Fan" index="0" unique_id=774339207]
+flip_h = true
+
+[node name="CollisionShape2D" parent="Fan/Fan Trigger" parent_id_path=PackedInt32Array(1844464575, 182248684) index="0" unique_id=82784684]
+position = Vector2(-204, 21.999998)
+
+[node name="GPUParticles2D" parent="Fan" index="3" unique_id=1288295307]
+rotation = 1.717404
+
+[node name="GPUParticles2D2" parent="Fan" index="4" unique_id=2031639801]
+rotation = 3.1415927
+
+[node name="GPUParticles2D3" parent="Fan" index="5" unique_id=1426126030]
+rotation = 3.1415927
+
 [editable path="GameOverTrigger"]
+[editable path="Fan"]
