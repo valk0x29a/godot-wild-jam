@@ -20,6 +20,7 @@ var is_flipped: bool = false;
 var throw_start_time: float;
 @onready var throw_ui: TextureProgressBar = %VSlider;
 var throw_started: bool = false;
+var is_player_locked: bool = false;
 
 func _physics_process(delta: float) -> void:
 	if(throw_started):
@@ -31,6 +32,7 @@ func _physics_process(delta: float) -> void:
 		throw_ui.visible = false;
 	handle_animation()
 	var input_x: float = Input.get_action_strength("Right") - Input.get_action_strength("Left");
+	if(is_player_locked): input_x = 0.0;
 	if(input_x == 1.0): is_flipped = false;
 	elif(input_x == -1.0): is_flipped = true;
 

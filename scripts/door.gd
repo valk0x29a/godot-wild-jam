@@ -2,7 +2,7 @@ extends StaticBody2D
 
 @export var door_open_offset: Vector2;
 @onready var original_pos: Vector2 = global_position;
-@export var open_duration: float;
+@export var open_duration: float = 1.0;
 var is_opening: bool = false;
 var played = false
 
