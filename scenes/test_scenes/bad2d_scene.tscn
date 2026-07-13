@@ -4,9 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://eadexlx14bww" path="res://prefabs/bouncable_barrel.tscn" id="2_b6yo7"]
 [ext_resource type="PackedScene" uid="uid://cpo2u87gmon1o" path="res://prefabs/explodable_barrel.tscn" id="3_3ny0r"]
 [ext_resource type="PackedScene" uid="uid://clnu47p5k0w8n" path="res://prefabs/player.tscn" id="4_lmokh"]
-[ext_resource type="PackedScene" uid="uid://pbtvdudegxiq" path="res://prefabs/prototype_rock.tscn" id="5_dxx7p"]
 [ext_resource type="PackedScene" uid="uid://becukr2fpntm5" path="res://prefabs/button.tscn" id="6_lethi"]
 [ext_resource type="PackedScene" uid="uid://bv4nxvf3716i6" path="res://prefabs/door.tscn" id="7_v85sp"]
+[ext_resource type="PackedScene" uid="uid://eeiq2l8245eo" path="res://prefabs/fan.tscn" id="8_3ny0r"]
 [ext_resource type="PackedScene" uid="uid://b71xxxmgpio42" path="res://prefabs/enemy.tscn" id="8_b6yo7"]
 
 [node name="Bad2dScene" type="Node2D" unique_id=875185498]
@@ -80,9 +80,6 @@ position = Vector2(699, 601)
 explode_required_force = 100.0
 explosion_force = 800.0
 
-[node name="Prototype Rock" parent="." unique_id=397919312 instance=ExtResource("5_dxx7p")]
-position = Vector2(217, 649)
-
 [node name="Button" parent="." unique_id=527419653 instance=ExtResource("6_lethi")]
 position = Vector2(1180, 603)
 
@@ -94,5 +91,9 @@ open_duration = 2.0
 [node name="Enemy" parent="." unique_id=1239631154 instance=ExtResource("8_b6yo7")]
 position = Vector2(1044, 602)
 gravity = 98.0
+
+[node name="Fan" parent="." unique_id=1844464575 instance=ExtResource("8_3ny0r")]
+position = Vector2(218, 603)
+force = 5.0
 
 [connection signal="on_button_press" from="Button" to="Door" method="open"]
