@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://becukr2fpntm5" path="res://prefabs/button.tscn" id="8_aae26"]
 [ext_resource type="PackedScene" uid="uid://eeiq2l8245eo" path="res://prefabs/fan.tscn" id="9_snwol"]
 [ext_resource type="PackedScene" uid="uid://pbtvdudegxiq" path="res://prefabs/prototype_rock.tscn" id="10_uiet3"]
+[ext_resource type="PackedScene" uid="uid://k1tgehm75ndm" path="res://prefabs/scene_teleporter.tscn" id="11_fb02y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jsvff"]
 size = Vector2(1142, 128)
@@ -84,12 +85,12 @@ explode_required_force = 128.0
 explosion_force = 512.0
 
 [node name="Door" parent="." unique_id=1435623570 instance=ExtResource("7_ggiy1")]
-position = Vector2(725, 452)
+position = Vector2(725, 395)
 door_open_offset = Vector2(0, -64)
 open_duration = 1.0
 
 [node name="Button" parent="." unique_id=527419653 instance=ExtResource("8_aae26")]
-position = Vector2(691, 403)
+position = Vector2(691, 358)
 rotation = -1.5707964
 scale = Vector2(0.25, 0.25)
 
@@ -102,8 +103,12 @@ position = Vector2(142.5, 0)
 shape = SubResource("RectangleShape2D_snwol")
 
 [node name="Prototype Rock" parent="." unique_id=397919312 instance=ExtResource("10_uiet3")]
-position = Vector2(726, 371)
+position = Vector2(726, 319)
 collision_layer = 17
+
+[node name="SceneTeleporter" parent="." unique_id=1448952218 instance=ExtResource("11_fb02y")]
+position = Vector2(904, 501)
+scene_name = "test_scenes/bad2d_scene"
 
 [connection signal="on_button_press" from="Button" to="Door" method="open"]
 
