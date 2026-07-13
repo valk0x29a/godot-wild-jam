@@ -1,10 +1,111 @@
 [gd_scene format=3 uid="uid://b71xxxmgpio42"]
 
 [ext_resource type="Script" uid="uid://c72hx6vsknegj" path="res://scripts/enemy.gd" id="1_6n8dw"]
-[ext_resource type="Texture2D" uid="uid://brramo03vm2ig" path="res://icon.svg" id="2_yfjof"]
+[ext_resource type="Texture2D" uid="uid://3adwxyekcipi" path="res://assets/sprites/sprite-sheets/enemy-full-Sheet.png" id="2_yfjof"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_16d1p"]
-size = Vector2(32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_cypye"]
+atlas = ExtResource("2_yfjof")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7d0n"]
+atlas = ExtResource("2_yfjof")
+region = Rect2(128, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aivmq"]
+atlas = ExtResource("2_yfjof")
+region = Rect2(256, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qnk7q"]
+atlas = ExtResource("2_yfjof")
+region = Rect2(384, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2nw32"]
+atlas = ExtResource("2_yfjof")
+region = Rect2(0, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6on0"]
+atlas = ExtResource("2_yfjof")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikd5g"]
+atlas = ExtResource("2_yfjof")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_geowp"]
+atlas = ExtResource("2_yfjof")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rnd4m"]
+atlas = ExtResource("2_yfjof")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xkwav"]
+atlas = ExtResource("2_yfjof")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8drnm"]
+atlas = ExtResource("2_yfjof")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hoy00"]
+atlas = ExtResource("2_yfjof")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5n6jt"]
+atlas = ExtResource("2_yfjof")
+region = Rect2(384, 128, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jeeod"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cypye")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_a7d0n")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_aivmq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qnk7q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2nw32")
+}],
+"loop": 1,
+"name": &"attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u6on0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ikd5g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_geowp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rnd4m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xkwav")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8drnm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hoy00")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5n6jt")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 10.0
+}]
 
 [node name="Enemy" type="CharacterBody2D" unique_id=1239631154 groups=["enemy"]]
 collision_layer = 8
@@ -12,9 +113,11 @@ script = ExtResource("1_6n8dw")
 speed = 4.0
 gravity = 9.8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2103840508]
-shape = SubResource("RectangleShape2D_16d1p")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=265907707]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_jeeod")
+animation = &"attack"
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2093756661]
-scale = Vector2(0.24999999, 0.24999999)
-texture = ExtResource("2_yfjof")
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="." unique_id=1753195749]
+position = Vector2(66, 17)
+polygon = PackedVector2Array(-66, -13, -79, 1, -120, 5, -124, -46, -95, -34, -59, -24, -31, -18, -5, -31, -3, -19, -18, -1, -28, 17, -19, 44, -33, 46, -45, 33, -58, 48, -69, 45, -62, 18, -62, 2)

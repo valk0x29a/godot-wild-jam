@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://db2es7rfivbxe"]
+
+[ext_resource type="Texture2D" uid="uid://bxq5rn8tkmp7y" path="res://assets/sprites/sprite-sheets/monkey-full-Sheet.png" id="1_y2nt5"]
+[ext_resource type="Script" uid="uid://ddpfiupte7krr" path="res://scripts/blood_effect.gd" id="2_56aw7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4mgu"]
+atlas = ExtResource("1_y2nt5")
+region = Rect2(256, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ask4"]
+atlas = ExtResource("1_y2nt5")
+region = Rect2(384, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bagon"]
+atlas = ExtResource("1_y2nt5")
+region = Rect2(512, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_app10"]
+atlas = ExtResource("1_y2nt5")
+region = Rect2(0, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxcc2"]
+atlas = ExtResource("1_y2nt5")
+region = Rect2(128, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3rdt"]
+atlas = ExtResource("1_y2nt5")
+region = Rect2(256, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpbpw"]
+atlas = ExtResource("1_y2nt5")
+region = Rect2(384, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70fqi"]
+atlas = ExtResource("1_y2nt5")
+region = Rect2(256, 512, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jeeod"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4mgu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ask4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bagon")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_app10")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxcc2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q3rdt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpbpw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_70fqi")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="blood_effect" type="AnimatedSprite2D" unique_id=1110129276]
+sprite_frames = SubResource("SpriteFrames_jeeod")
+autoplay = "default"
+frame = 7
+frame_progress = 1.0
+script = ExtResource("2_56aw7")

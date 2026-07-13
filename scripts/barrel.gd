@@ -35,6 +35,7 @@ func enable_physics():
 func _on_barrel_trigger_body_entered(body: Node2D) -> void:
 	if(body.is_in_group("enemy")):
 		if(absf(linear_velocity.x) > absf(body.velocity.x)):
+			blood_effect(body)
 			body.queue_free();
 
 func _on_body_entered(_body: Node) -> void:
@@ -50,6 +51,7 @@ func _on_body_entered(_body: Node) -> void:
 			if(nodes[i] is Player):
 				print("game over");
 			if(nodes[i] is Enemy):
+				blood_effect(nodes[i])
 				nodes[i].queue_free();
 		explode()
 		queue_free();
@@ -57,4 +59,9 @@ func _on_body_entered(_body: Node) -> void:
 func explode():
 	var effect = preload("uid://djyn8sj27sgd6").instantiate()
 	effect.global_position = global_position
+	add_sibling(effect)
+
+func blood_effect(node):
+	var effect = preload("uid://db2es7rfivbxe").instantiate()
+	effect.global_position = node.global_position
 	add_sibling(effect)
