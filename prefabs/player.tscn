@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dkxqlo5ktyyac" path="res://scripts/player.gd" id="1_72ieh"]
 [ext_resource type="Texture2D" uid="uid://bxq5rn8tkmp7y" path="res://assets/sprites/sprite-sheets/monkey-full-Sheet.png" id="2_4dohe"]
+[ext_resource type="Script" uid="uid://bnqavgnnx1fl3" path="res://scripts/retry_button.gd" id="3_r66lb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8rb0w"]
 atlas = ExtResource("2_4dohe")
@@ -154,3 +155,13 @@ offset_left = -79.0
 offset_top = -46.0
 offset_right = -63.0
 offset_bottom = 18.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=557152218]
+
+[node name="Button" type="Button" parent="CanvasLayer" unique_id=233957405]
+offset_left = 1220.0
+offset_top = 5.0
+offset_right = 1270.0
+offset_bottom = 36.0
+text = "Retry"
+script = ExtResource("3_r66lb")
