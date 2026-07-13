@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://becukr2fpntm5"]
 
 [ext_resource type="Script" uid="uid://btota0khc7pqu" path="res://scripts/button.gd" id="1_f40y1"]
-[ext_resource type="Texture2D" uid="uid://pfcbm3xwjkfv" path="res://assets/sprites/button-Sheet.png" id="2_f40y1"]
+[ext_resource type="Texture2D" uid="uid://hvdn7hl8c4kb" path="res://assets/sprites/sprite-sheets/button-full-Sheet.png" id="2_f40y1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uqs03"]
 atlas = ExtResource("2_f40y1")
@@ -78,7 +78,7 @@ script = ExtResource("1_f40y1")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2094185603]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_jeeod")
-animation = &"pressed"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=763963753]
