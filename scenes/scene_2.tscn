@@ -75,22 +75,7 @@ position = Vector2(1163, -322)
 position = Vector2(1007, -253)
 
 [node name="Fan" parent="." unique_id=1844464575 instance=ExtResource("6_qo03w")]
-position = Vector2(1242, 123)
-
-[node name="Sprite2D" parent="Fan" index="0" unique_id=774339207]
-flip_h = true
-
-[node name="CollisionShape2D" parent="Fan/Fan Trigger" parent_id_path=PackedInt32Array(1844464575, 182248684) index="0" unique_id=82784684]
-position = Vector2(-204, 21.999998)
-
-[node name="GPUParticles2D" parent="Fan" index="3" unique_id=1288295307]
-rotation = 1.717404
-
-[node name="GPUParticles2D2" parent="Fan" index="4" unique_id=2031639801]
-rotation = 3.1415927
-
-[node name="GPUParticles2D3" parent="Fan" index="5" unique_id=1426126030]
+position = Vector2(1242, 138)
 rotation = 3.1415927
 
 [editable path="GameOverTrigger"]
-[editable path="Fan"]
