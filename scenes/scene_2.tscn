@@ -2,6 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://clnu47p5k0w8n" path="res://prefabs/player.tscn" id="1_vsrvg"]
 [ext_resource type="PackedScene" uid="uid://dy83k5bsh4m4" path="res://prefabs/prototype_block.tscn" id="2_02v7m"]
+[ext_resource type="PackedScene" uid="uid://d1m8grixfdg24" path="res://prefabs/game_over_trigger.tscn" id="3_02v7m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mejfh"]
+size = Vector2(5373, 1362)
 
 [node name="Scene2" type="Node2D" unique_id=575129649]
 
@@ -10,3 +14,12 @@ position = Vector2(180, 128)
 
 [node name="PrototypeBlock" parent="." unique_id=1170064865 instance=ExtResource("2_02v7m")]
 position = Vector2(177, 258)
+
+[node name="GameOverTrigger" parent="." unique_id=401480968 instance=ExtResource("3_02v7m")]
+position = Vector2(-186, 1441)
+
+[node name="CollisionShape2D" parent="GameOverTrigger" index="0" unique_id=105444383]
+position = Vector2(1266.5, 665)
+shape = SubResource("RectangleShape2D_mejfh")
+
+[editable path="GameOverTrigger"]
