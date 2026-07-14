@@ -5,6 +5,7 @@ const SCENES_PATH = "res://scenes/"
 
 @export var text_ui: RichTextLabel;
 @export var time_to_show_next_char: float = 0.1;
+@export var time_to_switch_to_next_cutscene: float = 1.0;
 @export var scene_to_load_after: String
 @export var texts: Array[String] = [""]
 
@@ -29,13 +30,18 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	current_timer -= delta;
+	if(Input.is_action_just_released("ui_accept") || Input.is_action_just_released("ui_cancel")):
+		move_next();
+		return;
 	if(current_timer <= 0):
 		current_text_index += 1;
 		text_ui.visible_characters = current_text_index;
 		current_timer = time_to_show_next_char;
 		if (current_text_index == texts[current_index].length() + 1):
-			await get_tree().create_timer(1.0).timeout
+			current_timer = time_to_switch_to_next_cutscene;
+		if(current_text_index == texts[current_index].length() + 2):
 			move_next();
+
 
 func move_next():
 	if(current_index < get_child_count() - 1):

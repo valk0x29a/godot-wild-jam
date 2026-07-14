@@ -24,3 +24,10 @@ texture = ExtResource("2_juow0")
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1055511844]
 offset_right = 1277.0
 offset_bottom = 288.0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=606355561]
+offset_left = -1.0
+offset_top = 693.0
+offset_right = 1276.0
+offset_bottom = 981.0
+text = "Press Space To Skip"
