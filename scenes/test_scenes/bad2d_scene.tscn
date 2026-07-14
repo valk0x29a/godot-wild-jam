@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://becukr2fpntm5" path="res://prefabs/button.tscn" id="6_lethi"]
 [ext_resource type="PackedScene" uid="uid://bv4nxvf3716i6" path="res://prefabs/door.tscn" id="7_v85sp"]
 [ext_resource type="PackedScene" uid="uid://eeiq2l8245eo" path="res://prefabs/fan.tscn" id="8_3ny0r"]
-[ext_resource type="PackedScene" uid="uid://b71xxxmgpio42" path="res://prefabs/enemy.tscn" id="8_b6yo7"]
 
 [node name="Bad2dScene" type="Node2D" unique_id=875185498]
 
@@ -87,10 +86,6 @@ position = Vector2(1180, 603)
 position = Vector2(1302, 611)
 door_open_offset = Vector2(0, -128)
 open_duration = 2.0
-
-[node name="Enemy" parent="." unique_id=1239631154 instance=ExtResource("8_b6yo7")]
-position = Vector2(1044, 602)
-gravity = 98.0
 
 [node name="Fan" parent="." unique_id=1844464575 instance=ExtResource("8_3ny0r")]
 position = Vector2(218, 603)
