@@ -79,16 +79,17 @@ position = Vector2(1007, -253)
 
 [node name="Fan" parent="." unique_id=1844464575 instance=ExtResource("6_qo03w")]
 position = Vector2(1271, 123)
+force = 256.0
 
 [node name="Sprite2D" parent="Fan" index="0" unique_id=774339207]
-position = Vector2(-40, 3)
+position = Vector2(-35, 2)
 flip_h = true
 
 [node name="CollisionShape2D" parent="Fan" index="1" unique_id=600157727]
 disabled = true
 
 [node name="CollisionShape2D" parent="Fan/Fan Trigger" parent_id_path=PackedInt32Array(1844464575, 182248684) index="0" unique_id=82784684]
-position = Vector2(-204, 21.999998)
+position = Vector2(-185, 22)
 
 [node name="GPUParticles2D" parent="Fan" index="3" unique_id=1288295307]
 rotation = 3.1415927
@@ -117,3 +118,4 @@ scene_name = "scene_3"
 [connection signal="on_button_press" from="Button2" to="Door" method="open"]
 
 [editable path="GameOverTrigger"]
+[editable path="Fan"]

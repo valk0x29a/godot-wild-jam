@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://b7oiuyux7hkjd"]
+
+[ext_resource type="Script" uid="uid://bnd75j5s3rfdr" path="res://scripts/cutscenes_manager.gd" id="1_vuduy"]
+[ext_resource type="Texture2D" uid="uid://brramo03vm2ig" path="res://icon.svg" id="2_juow0"]
+
+[node name="IntroCutscene" type="Node2D" unique_id=339485010]
+
+[node name="CutscenesManager" type="Node" parent="." unique_id=1110449749 node_paths=PackedStringArray("text_ui")]
+script = ExtResource("1_vuduy")
+text_ui = NodePath("../RichTextLabel")
+scene_to_load_after = "scene_1"
+texts = Array[String](["MEOW MOEW", "HAU HAU"])
+metadata/_custom_type_script = "uid://bnd75j5s3rfdr"
+
+[node name="Sprite2D" type="Sprite2D" parent="CutscenesManager" unique_id=1656807142]
+position = Vector2(646, 316)
+texture = ExtResource("2_juow0")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CutscenesManager" unique_id=746112531]
+visible = false
+position = Vector2(1160, 575)
+texture = ExtResource("2_juow0")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1055511844]
+offset_right = 1277.0
+offset_bottom = 288.0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=606355561]
+offset_left = -1.0
+offset_top = 693.0
+offset_right = 1276.0
+offset_bottom = 981.0
+text = "Press Space To Skip"

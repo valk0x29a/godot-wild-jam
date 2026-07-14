@@ -99,3 +99,7 @@ func handle_animation():
 	%Sprite2D.flip_h = is_flipped
 	if not is_on_floor():
 		%Sprite2D.play("jump")
+	
+func die():
+	await get_tree().create_timer(1.0).timeout;
+	get_tree().reload_current_scene();

@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://c1eian4e21x1x"]
+
+[ext_resource type="PackedScene" uid="uid://clnu47p5k0w8n" path="res://prefabs/player.tscn" id="1_cfcac"]
+[ext_resource type="PackedScene" uid="uid://dy83k5bsh4m4" path="res://prefabs/prototype_block.tscn" id="2_gnyjb"]
+[ext_resource type="PackedScene" uid="uid://eadexlx14bww" path="res://prefabs/bouncable_barrel.tscn" id="3_8hhow"]
+[ext_resource type="PackedScene" uid="uid://b71xxxmgpio42" path="res://prefabs/enemy.tscn" id="4_jpbfi"]
+
+[node name="Scene2" type="Node2D" unique_id=575129649]
+
+[node name="Player" parent="." unique_id=75895601 instance=ExtResource("1_cfcac")]
+position = Vector2(180, 128)
+
+[node name="PrototypeBlock" parent="." unique_id=1170064865 instance=ExtResource("2_gnyjb")]
+position = Vector2(304, 511.00003)
+scale = Vector2(5, 5)
+
+[node name="PrototypeBlock19" parent="." unique_id=692698605 instance=ExtResource("2_gnyjb")]
+position = Vector2(-460.99994, 527)
+scale = Vector2(5, 5)
+
+[node name="PrototypeBlock20" parent="." unique_id=845752734 instance=ExtResource("2_gnyjb")]
+position = Vector2(1586, 513.00006)
+scale = Vector2(5, 5)
+
+[node name="PrototypeBlock21" parent="." unique_id=1390162862 instance=ExtResource("2_gnyjb")]
+position = Vector2(2225, 516)
+scale = Vector2(5, 5)
+
+[node name="PrototypeBlock2" parent="." unique_id=230863990 instance=ExtResource("2_gnyjb")]
+position = Vector2(944.99994, 511)
+scale = Vector2(5, 5)
+
+[node name="PrototypeBlock3" parent="." unique_id=1010641385 instance=ExtResource("2_gnyjb")]
+position = Vector2(744, -66)
+
+[node name="PrototypeBlock4" parent="." unique_id=1917304151 instance=ExtResource("2_gnyjb")]
+position = Vector2(882, -69)
+
+[node name="PrototypeBlock5" parent="." unique_id=2046787422 instance=ExtResource("2_gnyjb")]
+position = Vector2(1010, -66)
+
+[node name="Bouncable Barrel" parent="." unique_id=1008551793 instance=ExtResource("3_8hhow")]
+position = Vector2(416, 131)
+
+[node name="Bouncable Barrel2" parent="." unique_id=778960042 instance=ExtResource("3_8hhow")]
+position = Vector2(568, 131)
+
+[node name="Enemy" parent="." unique_id=1239631154 instance=ExtResource("4_jpbfi")]
+position = Vector2(1458, 124)
+
+[node name="Enemy2" parent="." unique_id=1076499426 instance=ExtResource("4_jpbfi")]
+position = Vector2(1638, 134)
+
+[node name="Enemy3" parent="." unique_id=397907056 instance=ExtResource("4_jpbfi")]
+position = Vector2(1786, 131)
+
+[node name="Enemy4" parent="." unique_id=1041494095 instance=ExtResource("4_jpbfi")]
+position = Vector2(1928, 131)
