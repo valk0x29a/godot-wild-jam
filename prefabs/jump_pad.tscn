@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://b5s65bkbjh47l"]
+
+[ext_resource type="Texture2D" uid="uid://brramo03vm2ig" path="res://icon.svg" id="1_sgole"]
+[ext_resource type="Script" uid="uid://o5pkwdq8aqcx" path="res://scripts/jump_pad.gd" id="1_xabne"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_edx07"]
+size = Vector2(128, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sgole"]
+size = Vector2(107, 20)
+
+[node name="JumpPad" type="StaticBody2D" unique_id=1646809208]
+script = ExtResource("1_xabne")
+jump_force = 1024.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=82720264]
+shape = SubResource("RectangleShape2D_edx07")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=26916979]
+scale = Vector2(1, 0.25)
+texture = ExtResource("1_sgole")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1224866875]
+collision_layer = 0
+collision_mask = 14
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1637184134]
+position = Vector2(-1.5, -26)
+shape = SubResource("RectangleShape2D_sgole")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
