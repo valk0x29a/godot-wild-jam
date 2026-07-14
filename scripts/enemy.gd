@@ -13,6 +13,9 @@ var attack_timer;
 
 @onready var player: Player = get_tree().get_root().get_child(0).get_node("Player");
 
+func _exit_tree() -> void:
+	player.is_player_locked = false;
+
 func _physics_process(delta: float) -> void:
 	check_state()
 
