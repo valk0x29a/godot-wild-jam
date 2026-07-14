@@ -25,7 +25,7 @@ func _physics_process(delta: float) -> void:
 		velocity = Vector2.ZERO
 		attack_timer -= delta;
 		if(attack_timer <= 0):
-			get_tree().reload_current_scene();
+			player.die();
 
 	velocity.y += gravity * ENEMY_SIZE * delta;
 	handle_animation()
