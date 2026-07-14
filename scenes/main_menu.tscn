@@ -10,7 +10,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l6cm7")
-scene_name = "scene_1"
+scene_name = "intro_cutscene"
 
 [node name="Title" type="RichTextLabel" parent="." unique_id=869047440]
 layout_mode = 0
