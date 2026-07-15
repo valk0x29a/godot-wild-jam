@@ -4,46 +4,31 @@
 [ext_resource type="PackedScene" uid="uid://bv4nxvf3716i6" path="res://prefabs/door.tscn" id="3_lki8s"]
 [ext_resource type="PackedScene" uid="uid://becukr2fpntm5" path="res://prefabs/button.tscn" id="4_t6bmd"]
 [ext_resource type="PackedScene" uid="uid://cl27gtgh5ujsr" path="res://prefabs/barrel.tscn" id="5_d7a6c"]
-[ext_resource type="PackedScene" uid="uid://b71xxxmgpio42" path="res://prefabs/enemy.tscn" id="6_t6bmd"]
 [ext_resource type="PackedScene" uid="uid://k1tgehm75ndm" path="res://prefabs/scene_teleporter.tscn" id="7_d7a6c"]
-[ext_resource type="PackedScene" uid="uid://d1m8grixfdg24" path="res://prefabs/game_over_trigger.tscn" id="8_g2j0d"]
 [ext_resource type="PackedScene" uid="uid://dm1el4g4mpx3i" path="res://prefabs/tile_map.tscn" id="8_p837x"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p837x"]
-size = Vector2(5373, 1362)
 
 [node name="Scene1" type="Node2D" unique_id=1417817506]
 
-[node name="Player" parent="." unique_id=75895601 instance=ExtResource("2_cn2eb")]
-position = Vector2(60, 379)
+[node name="TileMap" parent="." unique_id=1174134567 instance=ExtResource("8_p837x")]
+layer_0/tile_data = PackedInt32Array(327680, 1, 1, 327681, 1, 1, 327682, 1, 1, 327683, 1, 1, 327684, 1, 1, 327685, 1, 1, 327686, 1, 1, 327687, 1, 1, 327688, 1, 1, 327689, 1, 1, 327690, 1, 1, 327691, 1, 1, 393216, 1, 0, 393217, 1, 0, 393218, 1, 0, 393219, 1, 0, 393220, 1, 0, 393221, 1, 0, 393222, 1, 0, 393223, 1, 0, 393224, 1, 0, 393225, 1, 0, 393226, 1, 0, 393227, 1, 0, 458752, 1, 805306369, 458753, 1, 805306369, 458754, 1, 805306369, 458755, 1, 805306369, 458756, 1, 805306369, 458757, 1, 805306369, 458758, 1, 805306369, 458759, 1, 805306369, 458760, 1, 805306369, 458761, 1, 805306369, 458762, 1, 805306369, 458763, 1, 805306369, 393215, 65537, 0, 524287, 65537, 1610612736, 458751, 1, 1610612737, 327692, 65537, 1342177280, 393228, 1, 1342177281, 458764, 65537, 805306368, 65540, 65537, 1610612736, 65541, 65537, 805306368, 4, 65537, 0, 5, 65537, 1342177280)
 
-[node name="Door" parent="." unique_id=1435623570 instance=ExtResource("3_lki8s")]
-position = Vector2(646, 394)
-door_open_offset = Vector2(0, -128)
+[node name="Player" parent="." unique_id=75895601 instance=ExtResource("2_cn2eb")]
+position = Vector2(56, 257)
 
 [node name="Button" parent="." unique_id=527419653 instance=ExtResource("4_t6bmd")]
-position = Vector2(764, 385)
+position = Vector2(193, 72)
+rotation = -1.5707964
 
-[node name="Barrel" parent="." unique_id=1008551793 instance=ExtResource("5_d7a6c")]
-position = Vector2(412, 386)
-
-[node name="Enemy" parent="." unique_id=1239631154 instance=ExtResource("6_t6bmd")]
-position = Vector2(1593, 387)
+[node name="Door" parent="." unique_id=1435623570 instance=ExtResource("3_lki8s")]
+position = Vector2(310, 266)
+door_open_offset = Vector2(0, -128)
+open_duration = 2.0
 
 [node name="SceneTeleporter" parent="." unique_id=1448952218 instance=ExtResource("7_d7a6c")]
-position = Vector2(2391, 374)
+position = Vector2(731, 246)
 scene_name = "scene_2"
 
-[node name="GameOverTrigger" parent="." unique_id=401480968 instance=ExtResource("8_g2j0d")]
-position = Vector2(-182, 1465)
-
-[node name="CollisionShape2D" parent="GameOverTrigger" index="0" unique_id=105444383]
-position = Vector2(1266.5, 665)
-shape = SubResource("RectangleShape2D_p837x")
-
-[node name="TileMap" parent="." unique_id=1174134567 instance=ExtResource("8_p837x")]
-layer_0/tile_data = PackedInt32Array(458752, 1, 1, 458753, 1, 1, 458754, 1, 1, 458755, 1, 1, 458756, 1, 1, 458757, 1, 1, 458758, 1, 1, 458759, 1, 1, 458760, 1, 1, 458761, 1, 1, 458762, 1, 1, 458763, 1, 1, 458764, 1, 1, 458765, 1, 1, 458766, 1, 1, 458767, 1, 1, 458768, 1, 1, 458769, 1, 1, 458770, 1, 1, 458771, 1, 1, 458772, 1, 1, 458773, 1, 1, 458774, 1, 1, 458775, 1, 1, 458776, 1, 1, 458777, 1, 1, 458778, 1, 1, 458779, 1, 1, 458780, 1, 1, 458781, 1, 1, 458782, 1, 1, 458783, 1, 1, 458784, 1, 1, 458785, 1, 1, 458786, 1, 1, 458787, 1, 1, 458788, 1, 1, 458789, 1, 1, 458790, 1, 1, 458791, 1, 1, 524287, 65537, 0, 589823, 1, 1610612737, 458792, 65537, 1342177280, 524328, 1, 1342177281, 524327, 1, 0, 524326, 1, 0, 524325, 1, 0, 524323, 1, 0, 524324, 1, 0, 524322, 1, 0, 524321, 1, 0, 524320, 1, 0, 524319, 1, 0, 524316, 1, 0, 524317, 1, 0, 524318, 1, 0, 524315, 1, 0, 524314, 1, 0, 524313, 1, 0, 524312, 1, 0, 524311, 1, 0, 524310, 1, 0, 524309, 1, 0, 524308, 1, 0, 524307, 1, 0, 524306, 1, 0, 524305, 1, 0, 524304, 1, 0, 524303, 1, 0, 524302, 1, 0, 524301, 1, 0, 524288, 1, 0, 524289, 1, 0, 524290, 1, 0, 524291, 1, 0, 524292, 1, 0, 524293, 1, 0, 524294, 1, 0, 524295, 1, 0, 524296, 1, 0, 524297, 1, 0, 524298, 1, 0, 524299, 1, 0, 524300, 1, 0, 720895, 65537, 1610612736, 655360, 1, 805306369, 655361, 1, 805306369, 655362, 1, 805306369, 655363, 1, 805306369, 655364, 1, 805306369, 655365, 1, 805306369, 655366, 1, 805306369, 655367, 1, 805306369, 655368, 1, 805306369, 655369, 1, 805306369, 655370, 1, 805306369, 655371, 1, 805306369, 655372, 1, 805306369, 655373, 1, 805306369, 655374, 1, 805306369, 655375, 1, 805306369, 655376, 1, 805306369, 655377, 1, 805306369, 655378, 1, 805306369, 655379, 1, 805306369, 655380, 1, 805306369, 655381, 1, 805306369, 655382, 1, 805306369, 655383, 1, 805306369, 655384, 1, 805306369, 655385, 1, 805306369, 655386, 1, 805306369, 655387, 1, 805306369, 655388, 1, 805306369, 655389, 1, 805306369, 655390, 1, 805306369, 655391, 1, 805306369, 655392, 1, 805306369, 655393, 1, 805306369, 655394, 1, 805306369, 655395, 1, 805306369, 655396, 1, 805306369, 655397, 1, 805306369, 655398, 1, 805306369, 655399, 1, 805306369, 655400, 65537, 805306368, 655359, 1, 1610612737, 589824, 1, 0, 589825, 1, 0, 589826, 1, 0, 589827, 1, 0, 589828, 1, 0, 589829, 1, 0, 589830, 1, 0, 589831, 1, 0, 589832, 1, 0, 589833, 1, 0, 589834, 1, 0, 589835, 1, 0, 589836, 1, 0, 589837, 1, 0, 589838, 1, 0, 589839, 1, 0, 589840, 1, 0, 589841, 1, 0, 589842, 1, 0, 589843, 1, 0, 589844, 1, 0, 589845, 1, 0, 589846, 1, 0, 589847, 1, 0, 589848, 1, 0, 589849, 1, 0, 589850, 1, 0, 589851, 1, 0, 589852, 1, 0, 589853, 1, 0, 589854, 1, 0, 589855, 1, 0, 589856, 1, 0, 589857, 1, 0, 589858, 1, 0, 589859, 1, 0, 589860, 1, 0, 589861, 1, 0, 589862, 1, 0, 589863, 1, 0, 589864, 1, 1342177281)
+[node name="Barrel" parent="." unique_id=1008551793 instance=ExtResource("5_d7a6c")]
+position = Vector2(151, 256)
 
 [connection signal="on_button_press" from="Button" to="Door" method="open"]
-
-[editable path="GameOverTrigger"]

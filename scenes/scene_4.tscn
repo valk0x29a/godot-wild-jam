@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bkp58vmtgg2hl"]
 
+[ext_resource type="PackedScene" uid="uid://dm1el4g4mpx3i" path="res://prefabs/tile_map.tscn" id="1_7p87k"]
 [ext_resource type="PackedScene" uid="uid://clnu47p5k0w8n" path="res://prefabs/player.tscn" id="1_k1qvo"]
-[ext_resource type="PackedScene" uid="uid://dy83k5bsh4m4" path="res://prefabs/prototype_block.tscn" id="2_7p87k"]
 [ext_resource type="PackedScene" uid="uid://eadexlx14bww" path="res://prefabs/bouncable_barrel.tscn" id="3_bydh8"]
 [ext_resource type="PackedScene" uid="uid://becukr2fpntm5" path="res://prefabs/button.tscn" id="4_k1qvo"]
 [ext_resource type="PackedScene" uid="uid://bv4nxvf3716i6" path="res://prefabs/door.tscn" id="5_7p87k"]
@@ -9,86 +9,24 @@
 
 [node name="Scene2" type="Node2D" unique_id=575129649]
 
+[node name="TileMap" parent="." unique_id=1174134567 instance=ExtResource("1_7p87k")]
+layer_0/tile_data = PackedInt32Array(65551, 1, 1610612737, 131087, 1, 1610612737, 196623, 65537, 1610612736, 65552, 1, 1342177281, 131088, 1, 1342177281, 196624, 65537, 805306368, 15, 65537, 0, 16, 65537, 1342177280, 458757, 65537, 0, 524293, 1, 1610612737, 589829, 65537, 1610612736, 458758, 1, 1, 524294, 1, 0, 589830, 1, 805306369, 458759, 1, 1, 524295, 1, 0, 589831, 1, 805306369, 458760, 1, 1, 524296, 1, 0, 589832, 1, 805306369, 458761, 1, 1, 524297, 1, 0, 589833, 1, 805306369, 458762, 1, 1, 524298, 1, 0, 589834, 1, 805306369, 458763, 1, 1, 524299, 1, 0, 589835, 1, 805306369, 458764, 1, 1, 524300, 1, 0, 589836, 1, 805306369, 458765, 1, 1, 524301, 1, 0, 589837, 1, 805306369, 458766, 1, 1, 524302, 1, 0, 589838, 1, 805306369, 458767, 1, 1, 524303, 1, 0, 589839, 1, 805306369, 65544, 65537, 1342177280, 131080, 65537, 805306368, -65530, 65537, 0, 6, 1, 1610612737, 65542, 1, 1610612737, 131078, 65537, 1610612736, -65529, 65537, 1342177280, 7, 1, 1342177281, 65543, 1, 0, 131079, 1, 805306369, 131083, 65537, 1342177281, 131082, 65537, 1610612737, 458770, 1, 1, 524306, 1, 0, 589842, 1, 805306369, 458771, 1, 1, 524307, 1, 0, 589843, 1, 805306369, 458772, 65537, 1342177280, 524308, 1, 1342177281, 589844, 65537, 805306368, 458769, 1, 1, 458768, 1, 1, 589841, 1, 805306369, 589840, 1, 805306369, 524305, 1, 0, 524304, 1, 0)
+
 [node name="Player" parent="." unique_id=75895601 instance=ExtResource("1_k1qvo")]
-position = Vector2(180, 128)
-
-[node name="PrototypeBlock" parent="." unique_id=1170064865 instance=ExtResource("2_7p87k")]
-position = Vector2(304, 511.00003)
-scale = Vector2(5, 5)
-
-[node name="PrototypeBlock19" parent="." unique_id=692698605 instance=ExtResource("2_7p87k")]
-position = Vector2(-460.99994, 527)
-scale = Vector2(5, 5)
-
-[node name="PrototypeBlock2" parent="." unique_id=230863990 instance=ExtResource("2_7p87k")]
-position = Vector2(944.99994, 511)
-scale = Vector2(5, 5)
-
-[node name="PrototypeBlock20" parent="." unique_id=1854551990 instance=ExtResource("2_7p87k")]
-position = Vector2(1585, 511.00003)
-scale = Vector2(5, 5)
-
-[node name="Bouncable Barrel" parent="." unique_id=1008551793 instance=ExtResource("3_bydh8")]
-position = Vector2(734, 132)
-
-[node name="PrototypeBlock3" parent="." unique_id=1387667800 instance=ExtResource("2_7p87k")]
-position = Vector2(1123, -392)
-
-[node name="PrototypeBlock4" parent="." unique_id=416288819 instance=ExtResource("2_7p87k")]
-position = Vector2(1390, 130)
-
-[node name="PrototypeBlock5" parent="." unique_id=1046727074 instance=ExtResource("2_7p87k")]
-position = Vector2(994, -260)
-
-[node name="PrototypeBlock6" parent="." unique_id=1725097206 instance=ExtResource("2_7p87k")]
-position = Vector2(996, -2)
-
-[node name="PrototypeBlock7" parent="." unique_id=420551183 instance=ExtResource("2_7p87k")]
-position = Vector2(866, -1)
-
-[node name="PrototypeBlock8" parent="." unique_id=1400753618 instance=ExtResource("2_7p87k")]
-position = Vector2(868, -130)
-
-[node name="PrototypeBlock9" parent="." unique_id=923724714 instance=ExtResource("2_7p87k")]
-position = Vector2(864, -259)
-
-[node name="PrototypeBlock10" parent="." unique_id=722474767 instance=ExtResource("2_7p87k")]
-position = Vector2(857, -535)
-
-[node name="PrototypeBlock11" parent="." unique_id=924227903 instance=ExtResource("2_7p87k")]
-position = Vector2(1122, -260)
-
-[node name="PrototypeBlock12" parent="." unique_id=1006618675 instance=ExtResource("2_7p87k")]
-position = Vector2(1376, -520)
-
-[node name="PrototypeBlock13" parent="." unique_id=1910598788 instance=ExtResource("2_7p87k")]
-position = Vector2(1380, -395)
-
-[node name="PrototypeBlock14" parent="." unique_id=1772595238 instance=ExtResource("2_7p87k")]
-position = Vector2(1378, -266)
-
-[node name="PrototypeBlock15" parent="." unique_id=1477603971 instance=ExtResource("2_7p87k")]
-position = Vector2(1380, -136)
-
-[node name="PrototypeBlock16" parent="." unique_id=1366711840 instance=ExtResource("2_7p87k")]
-position = Vector2(1388, -5)
+position = Vector2(525, 386)
 
 [node name="Button" parent="." unique_id=527419653 instance=ExtResource("4_k1qvo")]
-position = Vector2(989, -130)
+position = Vector2(692, 64)
+
+[node name="Bouncable Barrel" parent="." unique_id=1008551793 instance=ExtResource("3_bydh8")]
+position = Vector2(742, 385)
 
 [node name="Door" parent="." unique_id=1435623570 instance=ExtResource("5_7p87k")]
-position = Vector2(-85, 190)
-rotation = 1.5521023
-door_open_offset = Vector2(-128, 0)
-
-[node name="PrototypeBlock17" parent="." unique_id=956814068 instance=ExtResource("2_7p87k")]
-position = Vector2(-73, 893)
-
-[node name="PrototypeBlock18" parent="." unique_id=420223340 instance=ExtResource("2_7p87k")]
-position = Vector2(-202, 108)
+position = Vector2(1134, 394)
+door_open_offset = Vector2(0, -128)
 
 [node name="SceneTeleporter" parent="." unique_id=1448952218 instance=ExtResource("5_7viaw")]
-position = Vector2(-75, 753)
+position = Vector2(1247, 373)
 scene_name = "scene_5"
 
 [connection signal="on_button_press" from="Button" to="Door" method="open"]
