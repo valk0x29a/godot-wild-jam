@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://byeqtcf7ba0m5" path="res://scripts/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="Texture2D" uid="uid://cx84hx5lmalcb" path="res://assets/sprites/sprite-sheets/start_button_full-sheet.png" id="2_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://iwkapu7o2wrq" path="res://assets/sprites/MAIN-MENU-GRID.png" id="4_8ln24"]
-[ext_resource type="Script" uid="uid://gg1cpmoujv14" path="res://scripts/play_sound_on_ready.gd" id="4_rtw2f"]
+[ext_resource type="Script" uid="uid://gg1cpmoujv14" path="res://scripts/play_music_on_ready.gd" id="4_rtw2f"]
 [ext_resource type="AudioStream" uid="uid://dvpyxpcj1mifg" path="res://assets/audio/music/wildjam 1.mp3" id="5_oa1go"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bqqt6"]
@@ -99,7 +99,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_8ln24")
 
-[node name="PlaySoundOnReady" type="Node" parent="." unique_id=833370456]
+[node name="PlayMusicOnReady" type="Node" parent="." unique_id=833370456]
 script = ExtResource("4_rtw2f")
 sound = ExtResource("5_oa1go")
 metadata/_custom_type_script = "uid://gg1cpmoujv14"

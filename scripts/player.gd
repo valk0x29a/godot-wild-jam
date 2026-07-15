@@ -38,7 +38,7 @@ func _physics_process(delta: float) -> void:
 	if(input_x == 1.0): is_flipped = false;
 	elif(input_x == -1.0): is_flipped = true;
 
-	if(Input.is_action_just_pressed("Jump") && not_grounded_timer <= coyotte_time && velocity.y >= 0.0):
+	if(Input.is_action_just_pressed("Jump") && not_grounded_timer <= coyotte_time && velocity.y >= 0.0 && !is_player_locked):
 		velocity.y = -jump_force * PLAYER_SIZE;
 
 	if(chosen_barrel != null):
