@@ -62,3 +62,7 @@ func play_death_splash_sound():
 # func play_door_sound():
 #     audio.stream = door_sound;
 #     audio.play();
+
+func play_audio_stream(stream: AudioStream):
+    audio.stream = stream;
+    audio.play();
