@@ -8,4 +8,4 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		character.velocity.y = -jump_force;
 	if(body is RigidBody2D):
 		var rigidbody: RigidBody2D = body;
-		rigidbody.velocity.y = -jump_force;
+		rigidbody.linear_velocity.y = -jump_force;
