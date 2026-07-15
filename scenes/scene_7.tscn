@@ -4,8 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://dy83k5bsh4m4" path="res://prefabs/prototype_block.tscn" id="2_gnyjb"]
 [ext_resource type="PackedScene" uid="uid://eadexlx14bww" path="res://prefabs/bouncable_barrel.tscn" id="3_8hhow"]
 [ext_resource type="PackedScene" uid="uid://b71xxxmgpio42" path="res://prefabs/enemy.tscn" id="4_jpbfi"]
+[ext_resource type="PackedScene" uid="uid://k1tgehm75ndm" path="res://prefabs/scene_teleporter.tscn" id="5_gnyjb"]
 
-[node name="Scene2" type="Node2D" unique_id=575129649]
+[node name="Scene3" type="Node2D" unique_id=575129649]
 
 [node name="Player" parent="." unique_id=75895601 instance=ExtResource("1_cfcac")]
 position = Vector2(180, 128)
@@ -56,3 +57,7 @@ position = Vector2(1786, 131)
 
 [node name="Enemy4" parent="." unique_id=1041494095 instance=ExtResource("4_jpbfi")]
 position = Vector2(1928, 131)
+
+[node name="SceneTeleporter" parent="." unique_id=1448952218 instance=ExtResource("5_gnyjb")]
+position = Vector2(2494, 121)
+scene_name = "end_cutscene"
