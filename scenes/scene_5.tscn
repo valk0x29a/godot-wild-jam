@@ -41,3 +41,4 @@ position = Vector2(1412, 385)
 
 [node name="SceneTeleporter" parent="." unique_id=1448952218 instance=ExtResource("3_vlsbu")]
 position = Vector2(-191, 373)
+scene_name = "scene_6"

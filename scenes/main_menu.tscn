@@ -73,10 +73,10 @@ scene_name = "intro_cutscene"
 
 [node name="Play" type="TextureButton" parent="." unique_id=614545281]
 layout_mode = 0
-offset_left = 538.0
-offset_top = 461.0
-offset_right = 645.0
-offset_bottom = 538.0
+offset_left = 528.0
+offset_top = 400.0
+offset_right = 635.0
+offset_bottom = 477.0
 scale = Vector2(2, 2)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Play" unique_id=389053049]
