@@ -14,5 +14,5 @@ func _physics_process(_delta: float) -> void:
 			rigidbody.apply_impulse(direction * force);
 		if(nodes[i] is CharacterBody2D):
 			var character: CharacterBody2D = nodes[i];
-			character.velocity += direction * force * 32;
+			character.velocity += direction * force;
 			character.move_and_slide();
