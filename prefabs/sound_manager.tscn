@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bu66yfd5js8d5"]
+
+[ext_resource type="Script" uid="uid://bv1s1wj27r532" path="res://scripts/sound_manager.gd" id="1_imb8a"]
+[ext_resource type="AudioStream" uid="uid://gtrhlyo36gmo" path="res://assets/audio/sfx/squish.mp3" id="2_k2hkb"]
+
+[node name="SoundManager" type="Node2D" unique_id=707277150]
+script = ExtResource("1_imb8a")
+
+[node name="jump" type="AudioStreamPlayer" parent="." unique_id=89051345]
+unique_name_in_owner = true
+
+[node name="walk" type="AudioStreamPlayer" parent="." unique_id=114310429]
+unique_name_in_owner = true
+
+[node name="death_splash" type="AudioStreamPlayer" parent="." unique_id=2082377667]
+unique_name_in_owner = true
+stream = ExtResource("2_k2hkb")
+
+[node name="ui_button" type="AudioStreamPlayer" parent="." unique_id=1589906700]
+unique_name_in_owner = true
+
+[node name="ingame_button" type="AudioStreamPlayer" parent="." unique_id=1449037032]
+unique_name_in_owner = true
+
+[node name="fan" type="AudioStreamPlayer" parent="." unique_id=1280830943]
+unique_name_in_owner = true
+
+[node name="jumppad" type="AudioStreamPlayer" parent="." unique_id=1359240125]
+unique_name_in_owner = true
+
+[node name="barrel_bounce" type="AudioStreamPlayer" parent="." unique_id=492914311]
+unique_name_in_owner = true
+
+[node name="bouncable_barrel_bounce" type="AudioStreamPlayer" parent="." unique_id=723615753]
+unique_name_in_owner = true
+
+[node name="barrel_explosion" type="AudioStreamPlayer" parent="." unique_id=1264574594]
+unique_name_in_owner = true
+
+[node name="door" type="AudioStreamPlayer" parent="." unique_id=606009421]
+unique_name_in_owner = true
+
+[node name="music_placeholder" type="AudioStreamPlayer" parent="." unique_id=531937639]
+unique_name_in_owner = true
