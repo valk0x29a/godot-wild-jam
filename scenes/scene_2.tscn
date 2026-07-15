@@ -79,7 +79,6 @@ position = Vector2(1007, -253)
 
 [node name="Fan" parent="." unique_id=1844464575 instance=ExtResource("6_qo03w")]
 position = Vector2(1271, 123)
-force = 256.0
 
 [node name="Sprite2D" parent="Fan" index="0" unique_id=774339207]
 position = Vector2(-35, 2)

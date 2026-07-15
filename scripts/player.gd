@@ -11,12 +11,14 @@ class_name Player
 @export var throw_hold_time_for_ref: float;
 @export var max_throw_hold_time: float;
 
+
 var PLAYER_SIZE: float = 32.0;
 
 var not_grounded_timer: float = 0.0;
 var chosen_barrel: Barrel = null;	
 var is_flipped: bool = false;
-
+var pressed = false
+var dead = false
 var throw_start_time: float;
 @onready var throw_ui: TextureProgressBar = %VSlider;
 var throw_started: bool = false;
@@ -92,14 +94,26 @@ func _physics_process(delta: float) -> void:
 			
 			
 func handle_animation():
-	if velocity and is_on_floor():
-		%Sprite2D.play("walk")
-	else:
-		%Sprite2D.play("idle")
-	%Sprite2D.flip_h = is_flipped
-	if not is_on_floor():
-		%Sprite2D.play("jump")
+	if not dead:
+		if velocity and is_on_floor():
+			%Sprite2D.play("walk")
+		else:
+			%Sprite2D.play("idle")
+		%Sprite2D.flip_h = is_flipped
+		if not is_on_floor():
+			%Sprite2D.play("jump")
 	
 func die():
-	await get_tree().create_timer(1.0).timeout;
-	get_tree().reload_current_scene();
+	if not dead:
+		dead = true
+		%Sprite2D.play("die")
+		await %Sprite2D.animation_finished
+		get_tree().reload_current_scene();
+
+
+func _on_retry_pressed() -> void:
+	if not pressed:
+		pressed = true
+		%AnimatedSprite2D.play("pressed")
+		await %AnimatedSprite2D.animation_finished
+		get_tree().reload_current_scene()

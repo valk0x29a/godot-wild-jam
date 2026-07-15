@@ -2,10 +2,48 @@
 
 [ext_resource type="Script" uid="uid://dkxqlo5ktyyac" path="res://scripts/player.gd" id="1_72ieh"]
 [ext_resource type="Texture2D" uid="uid://bxq5rn8tkmp7y" path="res://assets/sprites/sprite-sheets/monkey-full-Sheet.png" id="2_4dohe"]
-[ext_resource type="Script" uid="uid://bnqavgnnx1fl3" path="res://scripts/retry_button.gd" id="3_r66lb"]
 [ext_resource type="Texture2D" uid="uid://cwi0kk5i6oqsh" path="res://assets/sprites/banana_bar_back.png" id="3_ht1c8"]
 [ext_resource type="Texture2D" uid="uid://bltcdxpxokwim" path="res://assets/sprites/banana_bar_front.png" id="4_g2jcq"]
 [ext_resource type="Texture2D" uid="uid://bmxvibubgp2o3" path="res://assets/sprites/banana_bar_fill.png" id="5_u51tk"]
+[ext_resource type="Texture2D" uid="uid://c7yb1vhp78rk0" path="res://assets/sprites/sprite-sheets/retry_button_full-sheet.png" id="6_u51tk"]
+[ext_resource type="Texture2D" uid="uid://cx84hx5lmalcb" path="res://assets/sprites/sprite-sheets/start_button_full-sheet.png" id="7_kbsxf"]
+[ext_resource type="Texture2D" uid="uid://dk5olewoyrpjo" path="res://assets/sprites/sky.png" id="8_8rb0w"]
+[ext_resource type="Shader" uid="uid://ccbkc6ahah8up" path="res://shaders/player.gdshader" id="9_m2qjg"]
+[ext_resource type="Texture2D" uid="uid://c3ih5jaxxejnu" path="res://assets/sprites/cloud.png" id="9_sd3sa"]
+[ext_resource type="Texture2D" uid="uid://bxuu01flhvwud" path="res://assets/sprites/glass.png" id="10_m2qjg"]
+[ext_resource type="Texture2D" uid="uid://da2fk7pnklvit" path="res://assets/sprites/front-ground.png" id="11_llb5v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u51tk"]
+atlas = ExtResource("2_4dohe")
+region = Rect2(256, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kbsxf"]
+atlas = ExtResource("2_4dohe")
+region = Rect2(384, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ay5dx"]
+atlas = ExtResource("2_4dohe")
+region = Rect2(512, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5loxu"]
+atlas = ExtResource("2_4dohe")
+region = Rect2(0, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sh7kr"]
+atlas = ExtResource("2_4dohe")
+region = Rect2(128, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jxos"]
+atlas = ExtResource("2_4dohe")
+region = Rect2(256, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2c4y0"]
+atlas = ExtResource("2_4dohe")
+region = Rect2(384, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4pj3"]
+atlas = ExtResource("2_4dohe")
+region = Rect2(256, 512, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8rb0w"]
 atlas = ExtResource("2_4dohe")
@@ -65,6 +103,35 @@ region = Rect2(128, 256, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jeeod"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u51tk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kbsxf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ay5dx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5loxu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sh7kr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jxos")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2c4y0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w4pj3")
+}],
+"loop": 0,
+"name": &"die",
+"speed": 10.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8rb0w")
@@ -127,6 +194,64 @@ animations = [{
 radius = 19.0
 height = 110.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgeog"]
+atlas = ExtResource("6_u51tk")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opo22"]
+atlas = ExtResource("6_u51tk")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g56qp"]
+atlas = ExtResource("6_u51tk")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axxvs"]
+atlas = ExtResource("6_u51tk")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekxnf"]
+atlas = ExtResource("7_kbsxf")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oa1go"]
+atlas = ExtResource("7_kbsxf")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ay5dx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rgeog")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opo22")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g56qp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axxvs")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_ekxnf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oa1go")
+}],
+"loop": 0,
+"name": &"pressed",
+"speed": 10.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8rb0w"]
+shader = ExtResource("9_m2qjg")
+
 [node name="Player" type="CharacterBody2D" unique_id=75895601]
 collision_layer = 2
 script = ExtResource("1_72ieh")
@@ -166,11 +291,53 @@ texture_progress = ExtResource("5_u51tk")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=557152218]
 
-[node name="Button" type="Button" parent="CanvasLayer" unique_id=233957405]
-offset_left = 1220.0
-offset_top = 5.0
-offset_right = 1270.0
-offset_bottom = 36.0
-text = "Retry"
-script = ExtResource("3_r66lb")
+[node name="retry" type="TextureButton" parent="CanvasLayer" unique_id=1889938060]
+offset_left = 1162.0
+offset_top = 8.0
+offset_right = 1269.0
+offset_bottom = 84.99997
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/retry" unique_id=106091194]
+unique_name_in_owner = true
+position = Vector2(56, 43)
+sprite_frames = SubResource("SpriteFrames_ay5dx")
+autoplay = "default"
+
+[node name="background" type="CanvasLayer" parent="." unique_id=930774204]
+layer = -10
+
+[node name="sky" type="TextureRect" parent="background" unique_id=53747348]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_8rb0w")
+
+[node name="clouds" type="TextureRect" parent="background" unique_id=636011379]
+material = SubResource("ShaderMaterial_8rb0w")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_sd3sa")
+stretch_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="background" unique_id=85079610]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_m2qjg")
+stretch_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="background" unique_id=1640253226]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 360.0
+grow_horizontal = 2
+texture = ExtResource("11_llb5v")
+
+[connection signal="pressed" from="CanvasLayer/retry" to="." method="_on_retry_pressed"]
