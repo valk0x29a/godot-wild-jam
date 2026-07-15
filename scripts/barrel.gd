@@ -36,6 +36,7 @@ func _on_barrel_trigger_body_entered(body: Node2D) -> void:
 	if(body.is_in_group("enemy")):
 		if(absf(linear_velocity.x) > absf(body.velocity.x)):
 			blood_effect(body)
+			SoundManager.play_death_splash_sound();
 			body.queue_free();
 
 func _on_body_entered(_body: Node) -> void:

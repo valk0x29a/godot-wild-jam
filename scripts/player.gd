@@ -106,6 +106,7 @@ func handle_animation():
 func die():
 	if not dead:
 		dead = true
+		SoundManager.play_death_splash_sound();
 		%Sprite2D.play("die")
 		await %Sprite2D.animation_finished
 		get_tree().reload_current_scene();
