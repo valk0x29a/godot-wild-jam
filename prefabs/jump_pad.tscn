@@ -1,31 +1,89 @@
 [gd_scene format=3 uid="uid://b5s65bkbjh47l"]
 
-[ext_resource type="Texture2D" uid="uid://brramo03vm2ig" path="res://icon.svg" id="1_sgole"]
 [ext_resource type="Script" uid="uid://o5pkwdq8aqcx" path="res://scripts/jump_pad.gd" id="1_xabne"]
+[ext_resource type="Texture2D" uid="uid://dcik41peoi72u" path="res://assets/sprites/sprite-sheets/monkey-pad-boing.png" id="2_1m7gt"]
+[ext_resource type="Texture2D" uid="uid://cln4d11tdnlj5" path="res://assets/sprites/sprite-sheets/monkey-pad-boiling.png" id="3_avqsk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygg0o"]
+atlas = ExtResource("2_1m7gt")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpxmw"]
+atlas = ExtResource("2_1m7gt")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxc40"]
+atlas = ExtResource("2_1m7gt")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kn6cn"]
+atlas = ExtResource("3_avqsk")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64aed"]
+atlas = ExtResource("3_avqsk")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2bgjd"]
+atlas = ExtResource("3_avqsk")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jeeod"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ygg0o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpxmw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cxc40")
+}],
+"loop": 0,
+"name": &"boing",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kn6cn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64aed")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2bgjd")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 6.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_edx07"]
-size = Vector2(128, 32)
+size = Vector2(115, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sgole"]
-size = Vector2(107, 20)
+size = Vector2(76, 20)
 
 [node name="JumpPad" type="StaticBody2D" unique_id=1646809208]
 script = ExtResource("1_xabne")
 jump_force = 1024.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=82720264]
-shape = SubResource("RectangleShape2D_edx07")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=59722461]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_jeeod")
+autoplay = "default"
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=26916979]
-scale = Vector2(1, 0.25)
-texture = ExtResource("1_sgole")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=82720264]
+position = Vector2(4.5, 47)
+shape = SubResource("RectangleShape2D_edx07")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1224866875]
 collision_layer = 0
 collision_mask = 14
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1637184134]
-position = Vector2(-1.5, -26)
+position = Vector2(6, 23)
 shape = SubResource("RectangleShape2D_sgole")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

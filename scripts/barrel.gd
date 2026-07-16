@@ -41,7 +41,6 @@ func _on_barrel_trigger_body_entered(body: Node2D) -> void:
 
 func _on_body_entered(_body: Node) -> void:
 	if(!explodes_on_touch): return;
-	print(linear_velocity.length());
 	if(linear_velocity.length() > explode_required_force):
 		var nodes = explosion_area.get_overlapping_bodies();
 		for i in nodes.size():
@@ -50,7 +49,7 @@ func _on_body_entered(_body: Node) -> void:
 				var rigidbody: RigidBody2D = nodes[i];
 				rigidbody.apply_impulse(direction * explosion_force);
 			if(nodes[i] is Player):
-				print("game over");
+				nodes[i].die();
 			if(nodes[i] is Enemy):
 				blood_effect(nodes[i])
 				nodes[i].queue_free();

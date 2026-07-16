@@ -83,10 +83,10 @@ func _physics_process(delta: float) -> void:
 		not_grounded_timer = 0.0;
 	else:
 		not_grounded_timer += delta;
-	
 	velocity.x = input_x * PLAYER_SIZE * speed;
 	velocity.y += gravity * PLAYER_SIZE * delta;
-	move_and_slide();
+	if not dead:
+		move_and_slide();
 	for i in get_slide_collision_count():
 		var collision: KinematicCollision2D = get_slide_collision(i)
 		if(collision.get_collider() is RigidBody2D):

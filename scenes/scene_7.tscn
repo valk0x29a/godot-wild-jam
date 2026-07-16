@@ -1,3 +1,39 @@
 [gd_scene format=3 uid="uid://c1eian4e21x1x"]
 
+[ext_resource type="PackedScene" uid="uid://dm1el4g4mpx3i" path="res://prefabs/tile_map.tscn" id="1_jpbfi"]
+[ext_resource type="PackedScene" uid="uid://k1tgehm75ndm" path="res://prefabs/scene_teleporter.tscn" id="2_gtxkv"]
+[ext_resource type="PackedScene" uid="uid://clnu47p5k0w8n" path="res://prefabs/player.tscn" id="3_fo1ns"]
+[ext_resource type="PackedScene" uid="uid://cl27gtgh5ujsr" path="res://prefabs/barrel.tscn" id="4_re6ak"]
+[ext_resource type="PackedScene" uid="uid://cpo2u87gmon1o" path="res://prefabs/explodable_barrel.tscn" id="5_20cvb"]
+[ext_resource type="PackedScene" uid="uid://bv4nxvf3716i6" path="res://prefabs/door.tscn" id="6_lmoqm"]
+[ext_resource type="PackedScene" uid="uid://becukr2fpntm5" path="res://prefabs/button.tscn" id="7_8mqr3"]
+
 [node name="Scene2" type="Node2D" unique_id=575129649]
+
+[node name="TileMap" parent="." unique_id=1174134567 instance=ExtResource("1_jpbfi")]
+layer_0/tile_data = PackedInt32Array(524289, 1, 1, 589825, 1, 0, 655361, 1, 805306369, 524290, 1, 1, 589826, 1, 0, 655362, 1, 805306369, 524291, 1, 1, 589827, 1, 0, 655363, 1, 805306369, 524292, 1, 1, 589828, 1, 0, 655364, 1, 805306369, 524293, 1, 1, 589829, 1, 0, 655365, 1, 805306369, 524294, 1, 1, 589830, 1, 0, 655366, 1, 805306369, 589831, 1, 0, 655367, 1, 805306369, 589832, 1, 0, 655368, 1, 805306369, 589833, 1, 0, 655369, 1, 805306369, 524298, 1, 0, 589834, 1, 0, 655370, 1, 805306369, 524299, 1, 1, 589835, 1, 0, 655371, 1, 805306369, 524300, 1, 1, 589836, 1, 0, 655372, 1, 805306369, 524295, 1, 1, 524296, 1, 1, 524297, 1, 0, -65527, 65537, 0, 9, 1, 1610612737, -65526, 1, 1, 10, 1, 0, -65525, 1, 1, 11, 1, 805306369, -65524, 1, 1, 12, 1, 805306369, 262153, 65537, 0, 262154, 65537, 1342177280, 327689, 1, 1610612737, 393225, 1, 1610612737, 458761, 1, 1610612737, 327690, 1, 1342177281, 393226, 1, 1342177281, 458762, 1, 1342177281, 589821, 65537, 0, 655357, 1, 1610612737, 720893, 65537, 1610612736, 589822, 1, 1, 655358, 1, 0, 720894, 1, 805306369, 589823, 1, 1, 655359, 1, 0, 720895, 1, 805306369, 524288, 1, 1, 589824, 1, 0, 655360, 1, 805306369, -65523, 1, 1, 13, 1, 0, 524301, 1, 0, 589837, 1, 0, 655373, 1, 805306369, -65522, 65537, 1342177280, 14, 1, 1342177281, 65550, 1, 1342177281, 131086, 1, 1342177281, 196622, 1, 1342177281, 262158, 1, 1342177281, 327694, 1, 1342177281, 393230, 1, 1342177281, 458766, 1, 1342177281, 524302, 1, 1342177281, 589838, 1, 1342177281, 655374, 65537, 805306368, 65549, 1, 1610612737, 131085, 1, 1610612737, 196621, 1, 1610612737, 262157, 1, 1610612737, 327693, 1, 1610612737, 393229, 1, 1610612737, 458765, 1, 1610612737, 131081, 65537, 1610612736, 131082, 65537, 805306368, 65546, 1, 1342177281, 65545, 1, 1610612737)
+
+[node name="SceneTeleporter" parent="." unique_id=1448952218 instance=ExtResource("2_gtxkv")]
+position = Vector2(-95, 437)
+scene_name = "scene_8"
+
+[node name="Player" parent="." unique_id=75895601 instance=ExtResource("3_fo1ns")]
+position = Vector2(259, 443)
+
+[node name="Barrel" parent="." unique_id=1008551793 instance=ExtResource("4_re6ak")]
+position = Vector2(639, 191)
+
+[node name="Explodable Barrel" parent="." unique_id=1374575360 instance=ExtResource("5_20cvb")]
+position = Vector2(393, 449)
+explode_required_force = 100.0
+explosion_force = 200.0
+
+[node name="Door" parent="." unique_id=1435623570 instance=ExtResource("6_lmoqm")]
+position = Vector2(38, 458)
+door_open_offset = Vector2(0, -128)
+open_duration = 2.0
+
+[node name="Button" parent="." unique_id=527419653 instance=ExtResource("7_8mqr3")]
+position = Vector2(761, 449)
+
+[connection signal="on_button_press" from="Button" to="Door" method="open"]

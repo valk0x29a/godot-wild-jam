@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://dbtwf1pfboc7f"]
+
+[ext_resource type="PackedScene" uid="uid://dm1el4g4mpx3i" path="res://prefabs/tile_map.tscn" id="1_r41sh"]
+[ext_resource type="PackedScene" uid="uid://clnu47p5k0w8n" path="res://prefabs/player.tscn" id="2_yple6"]
+[ext_resource type="PackedScene" uid="uid://cl27gtgh5ujsr" path="res://prefabs/barrel.tscn" id="3_tiokc"]
+[ext_resource type="PackedScene" uid="uid://bv4nxvf3716i6" path="res://prefabs/door.tscn" id="4_cysfd"]
+[ext_resource type="PackedScene" uid="uid://b5s65bkbjh47l" path="res://prefabs/jump_pad.tscn" id="5_36260"]
+[ext_resource type="PackedScene" uid="uid://becukr2fpntm5" path="res://prefabs/button.tscn" id="6_c4y5g"]
+[ext_resource type="PackedScene" uid="uid://cpo2u87gmon1o" path="res://prefabs/explodable_barrel.tscn" id="7_6xcwm"]
+[ext_resource type="PackedScene" uid="uid://k1tgehm75ndm" path="res://prefabs/scene_teleporter.tscn" id="8_0mfce"]
+
+[node name="scene_8" type="Node2D" unique_id=989371550]
+
+[node name="TileMap" parent="." unique_id=1174134567 instance=ExtResource("1_r41sh")]
+layer_0/tile_data = PackedInt32Array(327683, 1, 1, 393219, 1, 0, 458755, 1, 805306369, 327684, 1, 1, 393220, 1, 0, 458756, 1, 805306369, 327685, 1, 1, 393221, 1, 0, 458757, 1, 805306369, 327686, 1, 1, 393222, 1, 0, 458758, 1, 805306369, 327687, 1, 1, 393223, 1, 0, 458759, 1, 805306369, 327688, 1, 1, 393224, 1, 0, 458760, 1, 0, -327664, 65537, 0, -262128, 1, 1610612737, -196592, 65537, 1610612736, -327663, 65537, 1342177280, -262127, 1, 1342177281, -196591, 65537, 805306368, 589832, 1, 1610612737, 589833, 1, 1342177281, 524296, 1, 1610612737, 655368, 1, 1610612737, 655369, 1, 1342177281, 327680, 65537, 0, 393216, 1, 1610612737, 458752, 65537, 1610612736, 327681, 1, 1, 393217, 1, 0, 458753, 1, 805306369, 327682, 1, 1, 393218, 1, 0, 458754, 1, 805306369, 327694, 1, 1, 393230, 1, 0, 327695, 1, 1, 393231, 1, 0, 786447, 1, 0, 851983, 1, 805306369, 327696, 1, 1, 393232, 1, 0, 786448, 1, 0, 851984, 1, 805306369, 327697, 1, 1, 393233, 1, 0, 786449, 1, 1342177281, 851985, 65537, 805306368, 327698, 1, 1, 393234, 1, 0, 458770, 1, 0, 327699, 1, 1, 393235, 1, 0, 458771, 1, 805306369, 327700, 65537, 1342177280, 393236, 1, 1342177281, 458772, 65537, 805306368, 655373, 65537, 0, 327689, 65537, 1342177280, 393225, 1, 1342177281, 458761, 1, 1342177281, 524297, 1, 1342177281, 327692, 65537, 0, 393228, 1, 1610612737, 327693, 1, 1, 393229, 1, 0, 851981, 1, 0, 851982, 1, 0, 917515, 1, 1, 983051, 1, 805306369, 917516, 1, 0, 983052, 1, 805306369, 917517, 1, 0, 983053, 1, 805306369, 917518, 1, 1342177281, 983054, 65537, 805306368, 786440, 1, 1610612737, 720904, 1, 1610612737, 786441, 1, 1342177281, 720905, 1, 1342177281, 786445, 1, 1610612737, 720909, 1, 1610612737, 786446, 1, 0, 458764, 65537, 1610612736, 458765, 1, 805306369, 458767, 1, 0, 720911, 1, 0, 458768, 1, 805306369, 720912, 1, 1, 458769, 1, 0, 524305, 1, 1610612737, 589841, 1, 1610612737, 655377, 1, 1610612737, 720913, 1, 0, 524303, 65537, 805306369, 655375, 65537, 1342177280, 524306, 1, 1342177281, 589842, 1, 1342177281, 655378, 1, 1342177281, 720914, 65537, 805306368, 655374, 1, 1, 720910, 1, 0, 458766, 1, 805306369, 851976, 1, 1610612737, 917512, 1, 1610612737, 983048, 65537, 1610612736, 851977, 1, 1342177281, 917513, 1, 0, 983049, 1, 805306369, 917514, 1, 1, 983050, 1, 805306369, 851980, 65537, 0)
+
+[node name="Player" parent="." unique_id=75895601 instance=ExtResource("2_yple6")]
+position = Vector2(492, 255)
+
+[node name="Barrel" parent="." unique_id=1008551793 instance=ExtResource("3_tiokc")]
+z_index = 0
+position = Vector2(994, 576)
+
+[node name="Explodable Barrel" parent="." unique_id=1302876285 instance=ExtResource("7_6xcwm")]
+position = Vector2(897, 577)
+explode_required_force = 50.0
+explosion_force = 100.0
+
+[node name="JumpPad" parent="." unique_id=1646809208 instance=ExtResource("5_36260")]
+position = Vector2(855, 256)
+jump_force = 800.0
+
+[node name="Door" parent="." unique_id=1435623570 instance=ExtResource("4_cysfd")]
+position = Vector2(702, 330)
+rotation = 1.5707964
+door_open_offset = Vector2(128, 0)
+open_duration = 3.0
+
+[node name="JumpPad2" parent="." unique_id=359191627 instance=ExtResource("5_36260")]
+position = Vector2(698, 832)
+jump_force = 1100.0
+
+[node name="Button" parent="." unique_id=527419653 instance=ExtResource("6_c4y5g")]
+position = Vector2(960, -217)
+rotation = -1.5707964
+
+[node name="Button2" parent="." unique_id=1427291327 instance=ExtResource("6_c4y5g")]
+position = Vector2(1025, 617)
+rotation = -1.5707964
+
+[node name="Door2" parent="." unique_id=43958005 instance=ExtResource("4_cysfd")]
+position = Vector2(180, 265)
+door_open_offset = Vector2(0, -128)
+open_duration = 2.0
+
+[node name="Barrel2" parent="." unique_id=191579669 instance=ExtResource("3_tiokc")]
+position = Vector2(382, 256)
+
+[node name="Barrel3" parent="." unique_id=2052087854 instance=ExtResource("3_tiokc")]
+position = Vector2(269, 257)
+
+[node name="SceneTeleporter" parent="." unique_id=1448952218 instance=ExtResource("8_0mfce")]
+position = Vector2(76, 246)
+scene_name = "scene_9"
+
+[connection signal="on_button_press" from="Button" to="Door" method="open"]
+[connection signal="on_button_press" from="Button2" to="Door2" method="open"]
