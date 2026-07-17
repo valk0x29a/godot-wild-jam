@@ -52,9 +52,10 @@ centered = false
 z_index = 1
 offset_right = 1277.0
 offset_bottom = 288.0
-theme_override_colors/default_color = Color(0.9882353, 0.21960784, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 28
 theme_override_fonts/normal_font = ExtResource("7_pbanw")
-theme_override_font_sizes/normal_font_size = 103
+theme_override_font_sizes/normal_font_size = 87
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=606355561]
 z_index = 1
