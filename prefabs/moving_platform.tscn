@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c8hiwcd82pm7n"]
+
+[ext_resource type="PackedScene" uid="uid://dm1el4g4mpx3i" path="res://prefabs/tile_map.tscn" id="1_ah4pd"]
+
+[node name="moving_platform" type="AnimatableBody2D" unique_id=12511258]
+
+[node name="TileMap" parent="." unique_id=1174134567 instance=ExtResource("1_ah4pd")]
+layer_0/tile_data = PackedInt32Array(-65537, 65537, 0, -1, 1, 1610612737, 65535, 65537, 1610612736, -131072, 65537, 1342177280, -65536, 1, 1342177281, 0, 65537, 805306368)

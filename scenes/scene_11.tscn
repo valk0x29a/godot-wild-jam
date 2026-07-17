@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://bb2u874bqvwcm"]
+
+[ext_resource type="PackedScene" uid="uid://dm1el4g4mpx3i" path="res://prefabs/tile_map.tscn" id="1_g14vn"]
+[ext_resource type="PackedScene" uid="uid://c8hiwcd82pm7n" path="res://prefabs/moving_platform.tscn" id="2_hts1r"]
+[ext_resource type="PackedScene" uid="uid://clnu47p5k0w8n" path="res://prefabs/player.tscn" id="3_hxa13"]
+[ext_resource type="PackedScene" uid="uid://cl27gtgh5ujsr" path="res://prefabs/barrel.tscn" id="4_b02dg"]
+[ext_resource type="PackedScene" uid="uid://eeiq2l8245eo" path="res://prefabs/fan.tscn" id="5_hts1r"]
+[ext_resource type="PackedScene" uid="uid://bv4nxvf3716i6" path="res://prefabs/door.tscn" id="6_n4k3u"]
+[ext_resource type="PackedScene" uid="uid://cpo2u87gmon1o" path="res://prefabs/explodable_barrel.tscn" id="7_v6va5"]
+[ext_resource type="PackedScene" uid="uid://becukr2fpntm5" path="res://prefabs/button.tscn" id="8_5gys6"]
+[ext_resource type="PackedScene" uid="uid://k1tgehm75ndm" path="res://prefabs/scene_teleporter.tscn" id="9_v6va5"]
+
+[sub_resource type="Animation" id="Animation_n4k3u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(703, 192)]
+}
+
+[sub_resource type="Animation" id="Animation_v6va5"]
+resource_name = "move"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(703, 192), Vector2(703, 63)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5gys6"]
+_data = {
+&"RESET": SubResource("Animation_n4k3u"),
+&"move": SubResource("Animation_v6va5")
+}
+
+[node name="scene_11" type="Node2D" unique_id=594364369]
+
+[node name="TileMap" parent="." unique_id=1174134567 instance=ExtResource("1_g14vn")]
+layer_0/tile_data = PackedInt32Array(393219, 1, 1, 458755, 1, 0, 524291, 1, 805306369, 393220, 1, 1, 458756, 1, 0, 524292, 1, 805306369, 393221, 1, 1, 458757, 1, 0, 524293, 1, 805306369, 393222, 1, 1, 458758, 1, 0, 524294, 1, 805306369, 393223, 1, 1, 458759, 1, 0, 524295, 1, 805306369, 393224, 1, 1, 458760, 1, 0, 524296, 1, 805306369, 393225, 1, 1, 458761, 1, 0, 524297, 1, 805306369, 393226, 1, 0, 458762, 1, 0, 524298, 1, 805306369, 393227, 1, 0, 458763, 1, 0, 524299, 1, 805306369, 458764, 1, 0, 524300, 1, 805306369, 393229, 1, 1, 458765, 1, 0, 524301, 1, 805306369, 393230, 1, 1, 458766, 1, 0, 524302, 1, 805306369, 393231, 1, 1, 458767, 1, 0, 524303, 1, 805306369, 458768, 1, 0, 524304, 1, 805306369, 458769, 1, 0, 524305, 1, 805306369, 393234, 1, 0, 458770, 1, 0, 524306, 1, 805306369, 393235, 1, 1342177281, 458771, 1, 1342177281, 524307, 65537, 805306368, 327690, 1, 1610612737, 262154, 65537, 0, 10, 1, 805306369, 327691, 1, 1342177281, 262155, 65537, 1342177280, 11, 65537, 805306368, 393228, 1, 1, -65525, 65537, 1342177280, -65526, 1, 1, -65527, 1, 1, 9, 1, 805306369, 8, 1, 805306369, 7, 65537, 1610612736, 4, 65537, 805306368, 3, 1, 805306369, -65528, 1, 1, -65529, 65537, 0, -65532, 65537, 1342177280, -65533, 1, 1, -65534, 65537, 0, 2, 65537, 1610612736, 262162, 65537, 0, 327698, 1, 1610612737, 262163, 65537, 1342177280, 327699, 1, 1342177281, 393233, 1, 1, 393232, 1, 1, 458749, 1, 1, 524285, 1, 0, 589821, 1, 805306369, 458750, 1, 1, 524286, 1, 0, 589822, 1, 805306369, 458751, 1, 1, 524287, 1, 0, 589823, 1, 805306369, 393216, 1, 1, 458752, 1, 0, 524288, 1, 805306369, 393217, 1, 1, 458753, 1, 0, 524289, 1, 805306369, 393218, 1, 1, 458754, 1, 0, 524290, 1, 805306369, 458747, 65537, 0, 524283, 1, 1610612737, 589819, 65537, 1610612736, 458748, 1, 1, 524284, 1, 0, 589820, 1, 805306369, -196603, 65537, 0, -196602, 65537, 1342177280, -131066, 65537, 805306368, -131067, 65537, 1610612736)
+
+[node name="moving_platform" parent="." unique_id=12511258 instance=ExtResource("2_hts1r")]
+position = Vector2(703, 192)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="moving_platform" unique_id=1119625818]
+libraries/ = SubResource("AnimationLibrary_5gys6")
+autoplay = &"move"
+
+[node name="Player" parent="." unique_id=75895601 instance=ExtResource("3_hxa13")]
+position = Vector2(312, 316)
+
+[node name="Barrel" parent="." unique_id=1008551793 instance=ExtResource("4_b02dg")]
+position = Vector2(384, 316)
+
+[node name="Fan" parent="." unique_id=1844464575 instance=ExtResource("5_hts1r")]
+position = Vector2(813, 322)
+
+[node name="Door" parent="." unique_id=1435623570 instance=ExtResource("6_n4k3u")]
+position = Vector2(63, 70)
+rotation = 1.5707964
+door_open_offset = Vector2(-128, 0)
+
+[node name="Explodable Barrel" parent="." unique_id=1246512615 instance=ExtResource("7_v6va5")]
+position = Vector2(71, -5)
+explode_required_force = 60.0
+explosion_force = 300.0
+
+[node name="Button" parent="." unique_id=527419653 instance=ExtResource("8_5gys6")]
+position = Vector2(1088, 333)
+rotation = -1.5707964
+
+[node name="Door2" parent="." unique_id=1128013209 instance=ExtResource("6_n4k3u")]
+position = Vector2(-68, 331)
+door_open_offset = Vector2(0, -128)
+
+[node name="SceneTeleporter" parent="." unique_id=1448952218 instance=ExtResource("9_v6va5")]
+position = Vector2(-201, 311)
+
+[node name="Door3" parent="." unique_id=1772661700 instance=ExtResource("6_n4k3u")]
+position = Vector2(380, 70)
+rotation = 1.5707964
+
+[node name="Barrel2" parent="." unique_id=1723909443 instance=ExtResource("4_b02dg")]
+position = Vector2(385, -5)
+
+[node name="Button2" parent="." unique_id=478680811 instance=ExtResource("8_5gys6")]
+position = Vector2(392, 0)
+rotation = 3.1415927
+
+[connection signal="on_button_press" from="Button" to="Door" method="open"]
+[connection signal="on_button_press" from="Button2" to="Door2" method="open"]
