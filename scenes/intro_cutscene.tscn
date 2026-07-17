@@ -1,33 +1,68 @@
 [gd_scene format=3 uid="uid://b7oiuyux7hkjd"]
 
 [ext_resource type="Script" uid="uid://bnd75j5s3rfdr" path="res://scripts/cutscenes_manager.gd" id="1_vuduy"]
-[ext_resource type="Texture2D" uid="uid://brramo03vm2ig" path="res://icon.svg" id="2_juow0"]
+[ext_resource type="Texture2D" uid="uid://b1x76l4iq06xb" path="res://assets/sprites/cutseen_1.png" id="2_jusdg"]
+[ext_resource type="Texture2D" uid="uid://cb7ifytmlfbfv" path="res://assets/sprites/cutseen2.png" id="3_dcu1r"]
+[ext_resource type="Texture2D" uid="uid://qav0jodacx70" path="res://assets/sprites/cutseen3.png" id="4_on3y1"]
+[ext_resource type="Texture2D" uid="uid://cflqdyhmxnon4" path="res://assets/sprites/cutseen4.png" id="5_wo2cs"]
+[ext_resource type="Texture2D" uid="uid://dsx0ysm6duwnn" path="res://assets/sprites/cutseen5.png" id="6_bprnf"]
+[ext_resource type="FontFile" uid="uid://br3tyqvj4v8jp" path="res://assets/VerySeriousFont.ttf" id="7_pbanw"]
 
 [node name="IntroCutscene" type="Node2D" unique_id=339485010]
 
 [node name="CutscenesManager" type="Node" parent="." unique_id=1110449749 node_paths=PackedStringArray("text_ui")]
 script = ExtResource("1_vuduy")
 text_ui = NodePath("../RichTextLabel")
+time_to_show_next_char = 0.08
+time_to_switch_to_next_cutscene = 1.5
 scene_to_load_after = "scene_1"
-texts = Array[String](["MEOW MOEW", "HAU HAU"])
+texts = Array[String](["In the old world of 90s cartoons...", "There lived a young poor monkey 'DONKEY MONK'...", "He was frustrated with the reality of society...", "He decided to take matter into his own hands...", "He will steal from 'BANANITO'..."])
 metadata/_custom_type_script = "uid://bnd75j5s3rfdr"
 
 [node name="Sprite2D" type="Sprite2D" parent="CutscenesManager" unique_id=1656807142]
-position = Vector2(646, 316)
-texture = ExtResource("2_juow0")
+scale = Vector2(2, 2)
+texture = ExtResource("2_jusdg")
+centered = false
 
 [node name="Sprite2D2" type="Sprite2D" parent="CutscenesManager" unique_id=746112531]
 visible = false
-position = Vector2(1160, 575)
-texture = ExtResource("2_juow0")
+scale = Vector2(2, 2)
+texture = ExtResource("3_dcu1r")
+centered = false
+
+[node name="Sprite2D3" type="Sprite2D" parent="CutscenesManager" unique_id=1541487659]
+visible = false
+scale = Vector2(2, 2)
+texture = ExtResource("4_on3y1")
+centered = false
+
+[node name="Sprite2D4" type="Sprite2D" parent="CutscenesManager" unique_id=1982049061]
+visible = false
+scale = Vector2(2, 2)
+texture = ExtResource("5_wo2cs")
+centered = false
+
+[node name="Sprite2D5" type="Sprite2D" parent="CutscenesManager" unique_id=2127537867]
+visible = false
+scale = Vector2(2, 2)
+texture = ExtResource("6_bprnf")
+centered = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1055511844]
+z_index = 1
 offset_right = 1277.0
 offset_bottom = 288.0
+theme_override_colors/default_color = Color(0.9882353, 0.21960784, 0, 1)
+theme_override_fonts/normal_font = ExtResource("7_pbanw")
+theme_override_font_sizes/normal_font_size = 103
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=606355561]
-offset_left = -1.0
-offset_top = 693.0
-offset_right = 1276.0
-offset_bottom = 981.0
+z_index = 1
+offset_left = 1080.0
+offset_top = -3.0
+offset_right = 2357.0
+offset_bottom = 285.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("7_pbanw")
+theme_override_font_sizes/normal_font_size = 33
 text = "Press Space To Skip"
