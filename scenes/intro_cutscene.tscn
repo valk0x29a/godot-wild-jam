@@ -15,7 +15,7 @@ script = ExtResource("1_vuduy")
 text_ui = NodePath("../RichTextLabel")
 time_to_show_next_char = 0.08
 time_to_switch_to_next_cutscene = 1.5
-scene_to_load_after = "scene_1"
+scene_to_load_after = "tutorial"
 texts = Array[String](["In the old world of 90s cartoons...", "There lived a young poor monkey 'DONKEY MONK'...", "He was frustrated with the reality of society...", "He decided to take matter into his own hands...", "He will steal from 'BANANITO'..."])
 metadata/_custom_type_script = "uid://bnd75j5s3rfdr"
 

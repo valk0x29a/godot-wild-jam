@@ -89,6 +89,7 @@ door_open_offset = Vector2(0, -128)
 
 [node name="SceneTeleporter" parent="." unique_id=1448952218 instance=ExtResource("9_v6va5")]
 position = Vector2(-201, 311)
+scene_name = "scene_12"
 
 [node name="Door3" parent="." unique_id=1772661700 instance=ExtResource("6_n4k3u")]
 position = Vector2(380, 70)
