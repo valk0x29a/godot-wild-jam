@@ -1,13 +1,19 @@
 [gd_scene format=3 uid="uid://bu66yfd5js8d5"]
 
 [ext_resource type="Script" uid="uid://bv1s1wj27r532" path="res://scripts/sound_manager.gd" id="1_imb8a"]
+[ext_resource type="AudioStream" uid="uid://cq4ch2jfjy6l3" path="res://assets/audio/sfx/wildjam jump.mp3" id="2_ew086"]
 [ext_resource type="AudioStream" uid="uid://gtrhlyo36gmo" path="res://assets/audio/sfx/squish.mp3" id="2_k2hkb"]
+[ext_resource type="AudioStream" uid="uid://co1ydg76fhogk" path="res://assets/audio/sfx/wildjam button press UI.mp3" id="4_yxlyk"]
+[ext_resource type="AudioStream" uid="uid://dvrnbiayh80y6" path="res://assets/audio/sfx/wildjam button press.mp3" id="5_qmqvb"]
+[ext_resource type="AudioStream" uid="uid://nt8mjhpepph7" path="res://assets/audio/sfx/wildjam barrel bounce.mp3" id="6_5g60j"]
+[ext_resource type="AudioStream" uid="uid://b2r441gyi72pc" path="res://assets/audio/sfx/wildjam super bouncy.mp3" id="7_d2c7h"]
 
 [node name="SoundManager" type="Node2D" unique_id=707277150]
 script = ExtResource("1_imb8a")
 
 [node name="jump" type="AudioStreamPlayer" parent="." unique_id=89051345]
 unique_name_in_owner = true
+stream = ExtResource("2_ew086")
 
 [node name="walk" type="AudioStreamPlayer" parent="." unique_id=114310429]
 unique_name_in_owner = true
@@ -18,9 +24,11 @@ stream = ExtResource("2_k2hkb")
 
 [node name="ui_button" type="AudioStreamPlayer" parent="." unique_id=1589906700]
 unique_name_in_owner = true
+stream = ExtResource("4_yxlyk")
 
 [node name="ingame_button" type="AudioStreamPlayer" parent="." unique_id=1449037032]
 unique_name_in_owner = true
+stream = ExtResource("5_qmqvb")
 
 [node name="fan" type="AudioStreamPlayer" parent="." unique_id=1280830943]
 unique_name_in_owner = true
@@ -30,9 +38,11 @@ unique_name_in_owner = true
 
 [node name="barrel_bounce" type="AudioStreamPlayer" parent="." unique_id=492914311]
 unique_name_in_owner = true
+stream = ExtResource("6_5g60j")
 
 [node name="bouncable_barrel_bounce" type="AudioStreamPlayer" parent="." unique_id=723615753]
 unique_name_in_owner = true
+stream = ExtResource("7_d2c7h")
 
 [node name="barrel_explosion" type="AudioStreamPlayer" parent="." unique_id=1264574594]
 unique_name_in_owner = true

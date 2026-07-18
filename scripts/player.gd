@@ -39,6 +39,7 @@ func _physics_process(delta: float) -> void:
 	elif(input_x == -1.0): is_flipped = true;
 
 	if(Input.is_action_just_pressed("Jump") && not_grounded_timer <= coyotte_time && velocity.y >= 0.0 && !is_player_locked):
+		SoundManager.play_jump();
 		velocity.y = -jump_force * PLAYER_SIZE;
 
 	if(chosen_barrel != null):
@@ -115,6 +116,7 @@ func die():
 func _on_retry_pressed() -> void:
 	if not pressed:
 		pressed = true
+		SoundManager.play_ui_button_sound();
 		%AnimatedSprite2D.play("pressed")
 		await %AnimatedSprite2D.animation_finished
 		get_tree().reload_current_scene()

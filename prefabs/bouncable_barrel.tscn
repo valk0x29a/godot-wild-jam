@@ -136,4 +136,5 @@ monitorable = false
 position = Vector2(-2, 10)
 shape = SubResource("CapsuleShape2D_ycrwg")
 
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="Barrel Trigger" to="." method="_on_barrel_trigger_body_entered"]
