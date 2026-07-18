@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cuuwhxgcvmlc7"
+path="res://.godot/imported/wildjam 4 buildup.mp3-e5c48b60beac15e575187e64586e6788.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/music/wildjam 4 buildup.mp3"
+dest_files=["res://.godot/imported/wildjam 4 buildup.mp3-e5c48b60beac15e575187e64586e6788.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

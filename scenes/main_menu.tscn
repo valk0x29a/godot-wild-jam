@@ -101,5 +101,6 @@ texture = ExtResource("4_8ln24")
 
 [node name="PlayMusicOnReady" type="Node" parent="." unique_id=833370456]
 script = ExtResource("4_rtw2f")
-sound = ExtResource("5_oa1go")
+intro_sound = ExtResource("5_oa1go")
+loop_sound = ExtResource("5_oa1go")
 metadata/_custom_type_script = "uid://gg1cpmoujv14"

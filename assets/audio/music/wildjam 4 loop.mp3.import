@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://huohm4upb7w4"
+path="res://.godot/imported/wildjam 4 loop.mp3-503bd6ba8ad898ab146b10e44eb2065e.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/music/wildjam 4 loop.mp3"
+dest_files=["res://.godot/imported/wildjam 4 loop.mp3-503bd6ba8ad898ab146b10e44eb2065e.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
