@@ -11,6 +11,7 @@ func _ready() -> void:
 func play():
 	if not pressed:
 		pressed = true
+		SoundManager.play_ui_button_sound();
 		%AnimatedSprite2D.play("pressed")
 		await %AnimatedSprite2D.animation_finished
 		get_tree().change_scene_to_file(SCENES_PATH + scene_name + ".tscn");

@@ -3,6 +3,7 @@ class_name Barrel
 
 var is_thrown: bool = false;
 @export var bounciness: float = 0.0;
+@export var bounce_sound_required_force: float = 64.0;
 @export var explodes_on_touch: bool = false;
 @export var explode_required_force: float = 0.0;
 @export var explosion_force: float;
@@ -40,6 +41,9 @@ func _on_barrel_trigger_body_entered(body: Node2D) -> void:
 			body.queue_free();
 
 func _on_body_entered(_body: Node) -> void:
+	if(linear_velocity.length() > bounce_sound_required_force):
+		if(bounciness > 0.1): SoundManager.play_bouncable_barrel_bounce_sound();
+		else: SoundManager.play_barrel_bounce_sound();
 	if(!explodes_on_touch): return;
 	if(linear_velocity.length() > explode_required_force):
 		var nodes = explosion_area.get_overlapping_bodies();
