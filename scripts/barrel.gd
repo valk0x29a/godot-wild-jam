@@ -56,7 +56,8 @@ func _on_body_entered(_body: Node) -> void:
 				nodes[i].die();
 			if(nodes[i] is Enemy):
 				blood_effect(nodes[i])
-				nodes[i].queue_free();
+				nodes[i].queue_free()
+	
 		explode()
 		queue_free();
 		

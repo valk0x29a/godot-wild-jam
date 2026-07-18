@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://3pinomwg2nnv"]
+
+[ext_resource type="Script" uid="uid://7y4p23cygo0m" path="res://scripts/tut_guyt.gd" id="1_1bi10"]
+[ext_resource type="Texture2D" uid="uid://3adwxyekcipi" path="res://assets/sprites/sprite-sheets/enemy-full-Sheet.png" id="1_mfitl"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jeeod"]
+radius = 48.0
+height = 110.0
+
+[node name="tut_guyt" type="CharacterBody2D" unique_id=1202222073]
+script = ExtResource("1_1bi10")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=513171128]
+texture = ExtResource("1_mfitl")
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 128)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1606839125]
+position = Vector2(17, 11)
+shape = SubResource("CapsuleShape2D_jeeod")

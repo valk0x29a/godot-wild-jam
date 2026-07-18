@@ -8,7 +8,7 @@
 [node name="CutscenesManager" type="Node" parent="." unique_id=1110449749 node_paths=PackedStringArray("text_ui")]
 script = ExtResource("1_qrpfg")
 text_ui = NodePath("../RichTextLabel")
-time_to_switch_to_next_cutscene = 20.0
+time_to_switch_to_next_cutscene = 10.0
 scene_to_load_after = "main_menu"
 texts = Array[String](["MEOW MOEW"])
 metadata/_custom_type_script = "uid://bnd75j5s3rfdr"

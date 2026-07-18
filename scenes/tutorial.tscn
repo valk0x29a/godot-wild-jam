@@ -1,0 +1,206 @@
+[gd_scene format=3 uid="uid://bieh4vtw828e8"]
+
+[ext_resource type="PackedScene" uid="uid://dm1el4g4mpx3i" path="res://prefabs/tile_map.tscn" id="1_4kmhl"]
+[ext_resource type="PackedScene" uid="uid://clnu47p5k0w8n" path="res://prefabs/player.tscn" id="2_cq4me"]
+[ext_resource type="Texture2D" uid="uid://d4aagq881vosx" path="res://assets/sprites/sprite-sheets/press_lmb.png" id="2_g2equ"]
+[ext_resource type="Texture2D" uid="uid://dwar3ut1m56jf" path="res://assets/sprites/sprite-sheets/press_e.png" id="3_6yjpi"]
+[ext_resource type="Texture2D" uid="uid://n2tbey1hkt32" path="res://assets/sprites/hold-tut.png" id="3_cq4me"]
+[ext_resource type="PackedScene" uid="uid://cl27gtgh5ujsr" path="res://prefabs/barrel.tscn" id="4_gbqnl"]
+[ext_resource type="Texture2D" uid="uid://j5j8qxjeoggp" path="res://assets/sprites/sprite-sheets/finish_him.png" id="4_tbcdj"]
+[ext_resource type="Texture2D" uid="uid://c3cfpf1bfqvdw" path="res://assets/sprites/sprite-sheets/escape.png" id="5_ej4tf"]
+[ext_resource type="Texture2D" uid="uid://bessv6f6aiwey" path="res://assets/sprites/throw-tut.png" id="7_0hilk"]
+[ext_resource type="PackedScene" uid="uid://3pinomwg2nnv" path="res://prefabs/tut_guyt.tscn" id="10_wr8iv"]
+[ext_resource type="PackedScene" uid="uid://k1tgehm75ndm" path="res://prefabs/scene_teleporter.tscn" id="11_e13mp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vrdqu"]
+atlas = ExtResource("2_g2equ")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmspm"]
+atlas = ExtResource("2_g2equ")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikfo1"]
+atlas = ExtResource("2_g2equ")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwom6"]
+atlas = ExtResource("2_g2equ")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w0ydi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vrdqu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmspm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ikfo1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwom6")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ckvwl"]
+atlas = ExtResource("3_6yjpi")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nlqja"]
+atlas = ExtResource("3_6yjpi")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0epgs"]
+atlas = ExtResource("3_6yjpi")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2equ"]
+atlas = ExtResource("3_6yjpi")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jeeod"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ckvwl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nlqja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0epgs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2equ")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bl2xa"]
+atlas = ExtResource("4_tbcdj")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15kfc"]
+atlas = ExtResource("4_tbcdj")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7a100"]
+atlas = ExtResource("4_tbcdj")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_feaue"]
+atlas = ExtResource("4_tbcdj")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1bi10"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bl2xa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15kfc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7a100")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_feaue")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_210s6"]
+atlas = ExtResource("5_ej4tf")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qvs7"]
+atlas = ExtResource("5_ej4tf")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbchm"]
+atlas = ExtResource("5_ej4tf")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxgfo"]
+atlas = ExtResource("5_ej4tf")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_riwy3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_210s6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5qvs7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qbchm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxgfo")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="tutorial" type="Node2D" unique_id=693010362]
+position = Vector2(0, 1)
+
+[node name="TileMap" parent="." unique_id=1174134567 instance=ExtResource("1_4kmhl")]
+layer_0/tile_data = PackedInt32Array(458754, 65537, 0, 524290, 1, 1610612737, 589826, 65537, 1610612736, 458755, 1, 1, 524291, 1, 0, 589827, 1, 805306369, 458756, 1, 1, 524292, 1, 0, 589828, 1, 805306369, 458757, 1, 1, 524293, 1, 0, 589829, 1, 805306369, 458758, 1, 1, 524294, 1, 0, 589830, 1, 805306369, 458759, 1, 1, 524295, 1, 0, 589831, 1, 805306369, 458760, 1, 1, 524296, 1, 0, 589832, 1, 805306369, 458761, 1, 1, 524297, 1, 0, 589833, 1, 805306369, 458765, 1, 1, 524301, 1, 0, 589837, 1, 805306369, 458762, 1, 1, 524298, 1, 0, 589834, 1, 805306369, 458763, 1, 1, 524299, 1, 0, 589835, 1, 805306369, 458764, 1, 1, 524300, 1, 0, 589836, 1, 805306369, 458772, 1, 1, 524308, 1, 0, 589844, 1, 805306369, 458767, 1, 1, 524303, 1, 0, 589839, 1, 805306369, 458768, 1, 1, 524304, 1, 0, 589840, 1, 805306369, 458769, 1, 1, 524305, 1, 0, 589841, 1, 805306369, 458770, 1, 1, 524306, 1, 0, 589842, 1, 805306369, 458771, 1, 1, 524307, 1, 0, 589843, 1, 805306369, 458766, 1, 1, 524302, 1, 0, 589838, 1, 805306369, 458778, 1, 1, 524314, 1, 0, 589850, 1, 805306369, 458779, 1, 1, 524315, 1, 0, 589851, 1, 805306369, 458780, 1, 1, 524316, 1, 0, 589852, 1, 805306369, 458781, 65537, 1342177280, 524317, 1, 1342177281, 589853, 65537, 805306368, 458773, 1, 1, 524309, 1, 0, 589845, 1, 805306369, 458774, 1, 1, 524310, 1, 0, 589846, 1, 805306369, 458775, 1, 1, 524311, 1, 0, 589847, 1, 805306369, 458776, 1, 1, 524312, 1, 0, 589848, 1, 805306369, 458777, 1, 1, 524313, 1, 0, 589849, 1, 805306369)
+
+[node name="presslmb" type="AnimatedSprite2D" parent="." unique_id=1294401497]
+position = Vector2(963, 309)
+sprite_frames = SubResource("SpriteFrames_w0ydi")
+autoplay = "default"
+
+[node name="press e" type="AnimatedSprite2D" parent="." unique_id=132141853]
+position = Vector2(400, 289)
+sprite_frames = SubResource("SpriteFrames_jeeod")
+autoplay = "default"
+
+[node name="finish" type="AnimatedSprite2D" parent="." unique_id=1870901016]
+position = Vector2(1429, 257)
+sprite_frames = SubResource("SpriteFrames_1bi10")
+autoplay = "default"
+
+[node name="escape" type="AnimatedSprite2D" parent="." unique_id=1088763959]
+position = Vector2(1775, 253)
+sprite_frames = SubResource("SpriteFrames_riwy3")
+autoplay = "default"
+
+[node name="holding" type="Sprite2D" parent="." unique_id=692419262]
+position = Vector2(522, 320)
+texture = ExtResource("3_cq4me")
+
+[node name="throwing" type="Sprite2D" parent="." unique_id=416460905]
+position = Vector2(1122, 320)
+texture = ExtResource("7_0hilk")
+
+[node name="Barrel" parent="." unique_id=1008551793 instance=ExtResource("4_gbqnl")]
+position = Vector2(413, 384)
+
+[node name="Player" parent="." unique_id=75895601 instance=ExtResource("2_cq4me")]
+position = Vector2(236, 383)
+
+[node name="tut_guyt" parent="." unique_id=1202222073 instance=ExtResource("10_wr8iv")]
+position = Vector2(1439, 385)
+
+[node name="SceneTeleporter" parent="." unique_id=1448952218 instance=ExtResource("11_e13mp")]
+position = Vector2(1826, 373)
+scene_name = "scene_1"
+
+[connection signal="body_entered" from="Barrel" to="tut_guyt" method="_on_barrel_body_entered"]

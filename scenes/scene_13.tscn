@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://bkojgab7frg3f"]
+
+[ext_resource type="PackedScene" uid="uid://dm1el4g4mpx3i" path="res://prefabs/tile_map.tscn" id="1_1t61p"]
+[ext_resource type="PackedScene" uid="uid://clnu47p5k0w8n" path="res://prefabs/player.tscn" id="2_cqkqw"]
+[ext_resource type="PackedScene" uid="uid://b5s65bkbjh47l" path="res://prefabs/jump_pad.tscn" id="3_cqkqw"]
+[ext_resource type="PackedScene" uid="uid://cl27gtgh5ujsr" path="res://prefabs/barrel.tscn" id="4_a3a8t"]
+[ext_resource type="PackedScene" uid="uid://bv4nxvf3716i6" path="res://prefabs/door.tscn" id="5_oo15q"]
+[ext_resource type="PackedScene" uid="uid://b71xxxmgpio42" path="res://prefabs/enemy.tscn" id="6_scnps"]
+[ext_resource type="PackedScene" uid="uid://c8hiwcd82pm7n" path="res://prefabs/moving_platform.tscn" id="7_scnps"]
+[ext_resource type="Script" uid="uid://b06f83u6lqmo7" path="res://scripts/animation_player.gd" id="8_14vil"]
+[ext_resource type="PackedScene" uid="uid://becukr2fpntm5" path="res://prefabs/button.tscn" id="8_ofnpj"]
+[ext_resource type="PackedScene" uid="uid://cpo2u87gmon1o" path="res://prefabs/explodable_barrel.tscn" id="10_10wug"]
+[ext_resource type="PackedScene" uid="uid://k1tgehm75ndm" path="res://prefabs/scene_teleporter.tscn" id="11_8s7vo"]
+
+[sub_resource type="Animation" id="Animation_14vil"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(949, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ofnpj"]
+resource_name = "move"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(949, 1), Vector2(1282, 1), Vector2(1282, 296), Vector2(949, 299), Vector2(949, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_10wug"]
+_data = {
+&"RESET": SubResource("Animation_14vil"),
+&"move": SubResource("Animation_ofnpj")
+}
+
+[node name="scene_13" type="Node2D" unique_id=1726962809]
+
+[node name="TileMap" parent="." unique_id=1174134567 instance=ExtResource("1_1t61p")]
+layer_0/tile_data = PackedInt32Array(458752, 65537, 0, 524288, 1, 1610612737, 589824, 65537, 1610612736, 458753, 1, 1, 524289, 1, 0, 589825, 1, 805306369, 458754, 1, 1, 524290, 1, 0, 589826, 1, 805306369, 458755, 1, 1, 524291, 1, 0, 589827, 1, 805306369, 458756, 1, 1, 524292, 1, 0, 589828, 1, 805306369, 458757, 1, 1, 524293, 1, 0, 589829, 1, 805306369, 458758, 1, 1, 524294, 1, 0, 589830, 1, 805306369, 458759, 1, 1, 524295, 1, 0, 589831, 1, 805306369, 458760, 1, 1, 524296, 1, 0, 589832, 1, 0, 655368, 65537, 1610612736, 851976, 1, 1, 917512, 1, 0, 983048, 1, 0, 1048584, 1, 1610612737, 1114120, 65537, 1610612736, 458761, 65537, 1342177280, 524297, 1, 1342177281, 589833, 1, 1342177281, 655369, 65537, 805306368, 851977, 65537, 1342177280, 917513, 1, 1342177281, 983049, 1, 1342177281, 1048585, 1, 0, 1114121, 1, 805306369, 1048586, 1, 1, 1114122, 1, 805306369, 1048587, 1, 1, 1114123, 1, 805306369, 1048588, 1, 1, 1114124, 1, 805306369, 1048589, 1, 1, 1114125, 1, 805306369, 1048590, 1, 1, 1114126, 1, 805306369, 1048591, 1, 1, 1114127, 1, 805306369, 1048592, 1, 1, 1114128, 1, 805306369, 1048593, 1, 1, 1114129, 1, 805306369, 1048594, 1, 1, 1114130, 1, 805306369, 1048595, 1, 1, 1114131, 1, 805306369, 1048596, 1, 0, 1114132, 1, 805306369, 1048597, 1, 0, 1114133, 1, 805306369, 983061, 65537, 1342177280, 983060, 65537, 0, 458772, 1, 1, 458773, 65537, 1342177280, 524309, 1, 1342177281, 458771, 1, 1, 458770, 1, 1, 458769, 1, 1, 458768, 1, 1, 458767, 1, 1, 458766, 1, 1, 458765, 1, 1, 458764, 65537, 0, 524307, 1, 805306369, 524306, 1, 805306369, 524305, 1, 805306369, 524304, 1, 805306369, 524303, 1, 805306369, 524302, 1, 805306369, 524301, 1, 805306369, 524300, 65537, 1610612736, 524308, 1, 0, 589844, 1, 1610612737, 655380, 1, 1610612737, 589845, 1, 1342177281, 655381, 1, 1342177281, 851988, 65537, 1610612736, 851989, 65537, 805306368, 720916, 1, 1610612737, 786452, 1, 1610612737, 720917, 1, 1342177281, 786453, 1, 1342177281, 983047, 1, 805306369, 983046, 1, 805306369, 983045, 1, 805306369, 851975, 1, 1, 851974, 1, 1, 851973, 1, 1, 917511, 1, 0, 917510, 1, 0, 917509, 1, 0, 851972, 65537, 0, 917508, 1, 1610612737, 983044, 65537, 1610612736, 1114134, 1, 805306369, 1114135, 65537, 805306368, 1048598, 1, 1, 1048599, 65537, 1342177280)
+
+[node name="Player" parent="." unique_id=75895601 instance=ExtResource("2_cqkqw")]
+position = Vector2(386, 382)
+
+[node name="JumpPad" parent="." unique_id=1646809208 instance=ExtResource("3_cqkqw")]
+position = Vector2(709, 962)
+jump_force = 1050.0
+
+[node name="JumpPad2" parent="." unique_id=1101044526 instance=ExtResource("3_cqkqw")]
+position = Vector2(836, 962)
+jump_force = 700.0
+
+[node name="JumpPad3" parent="." unique_id=836719107 instance=ExtResource("3_cqkqw")]
+position = Vector2(959, 962)
+jump_force = 700.0
+
+[node name="JumpPad4" parent="." unique_id=654884542 instance=ExtResource("3_cqkqw")]
+position = Vector2(1083, 962)
+jump_force = 700.0
+
+[node name="JumpPad5" parent="." unique_id=1613343551 instance=ExtResource("3_cqkqw")]
+position = Vector2(1208, 962)
+jump_force = 700.0
+
+[node name="Barrel" parent="." unique_id=1008551793 instance=ExtResource("4_a3a8t")]
+position = Vector2(1139, 857)
+
+[node name="Door" parent="." unique_id=1435623570 instance=ExtResource("5_oo15q")]
+position = Vector2(253, 394)
+door_open_offset = Vector2(0, -128)
+
+[node name="Enemy" parent="." unique_id=1239631154 instance=ExtResource("6_scnps")]
+position = Vector2(21, 384)
+
+[node name="Enemy2" parent="." unique_id=1253714067 instance=ExtResource("6_scnps")]
+position = Vector2(154, 384)
+
+[node name="moving_platform" parent="." unique_id=12511258 instance=ExtResource("7_scnps")]
+position = Vector2(949, 1)
+
+[node name="Button2" parent="moving_platform" unique_id=527419653 instance=ExtResource("8_ofnpj")]
+position = Vector2(-10, -191)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="moving_platform" unique_id=124183311]
+libraries/ = SubResource("AnimationLibrary_10wug")
+script = ExtResource("8_14vil")
+
+[node name="Timer" type="Timer" parent="moving_platform" unique_id=1805457257]
+wait_time = 0.5
+one_shot = true
+autostart = true
+
+[node name="moving_platform2" parent="." unique_id=67098862 instance=ExtResource("7_scnps")]
+position = Vector2(949, 1)
+
+[node name="Button" parent="moving_platform2" unique_id=597415524 instance=ExtResource("8_ofnpj")]
+position = Vector2(-10, -192)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="moving_platform2" unique_id=276613507]
+libraries/ = SubResource("AnimationLibrary_10wug")
+autoplay = &"move"
+
+[node name="Door2" parent="." unique_id=1764037804 instance=ExtResource("5_oo15q")]
+position = Vector2(699, 440)
+rotation = 1.5707964
+door_open_offset = Vector2(128, 0)
+
+[node name="Explodable Barrel" parent="." unique_id=697733481 instance=ExtResource("10_10wug")]
+position = Vector2(522, 384)
+explode_required_force = 100.0
+explosion_force = 200.0
+
+[node name="SceneTeleporter" parent="." unique_id=1448952218 instance=ExtResource("11_8s7vo")]
+position = Vector2(376, 757)
+
+[node name="Door3" parent="." unique_id=280003144 instance=ExtResource("5_oo15q")]
+position = Vector2(579, 777)
+door_open_offset = Vector2(0, -128)
+
+[node name="Button" parent="." unique_id=833075539 instance=ExtResource("8_ofnpj")]
+position = Vector2(1464, 961)
+
+[connection signal="on_button_press" from="moving_platform/Button2" to="Door" method="open"]
+[connection signal="timeout" from="moving_platform/Timer" to="moving_platform/AnimationPlayer" method="_on_timer_timeout"]
+[connection signal="on_button_press" from="moving_platform2/Button" to="Door2" method="open"]
+[connection signal="on_button_press" from="Button" to="Door3" method="open"]
