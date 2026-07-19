@@ -12,6 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://bessv6f6aiwey" path="res://assets/sprites/throw-tut.png" id="7_0hilk"]
 [ext_resource type="PackedScene" uid="uid://3pinomwg2nnv" path="res://prefabs/tut_guyt.tscn" id="10_wr8iv"]
 [ext_resource type="PackedScene" uid="uid://k1tgehm75ndm" path="res://prefabs/scene_teleporter.tscn" id="11_e13mp"]
+[ext_resource type="Script" uid="uid://gg1cpmoujv14" path="res://scripts/play_music_on_ready.gd" id="13_wr8iv"]
+[ext_resource type="AudioStream" uid="uid://cuuwhxgcvmlc7" path="res://assets/audio/music/wildjam 4 buildup.mp3" id="14_e13mp"]
+[ext_resource type="AudioStream" uid="uid://huohm4upb7w4" path="res://assets/audio/music/wildjam 4 loop.mp3" id="15_vrdqu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vrdqu"]
 atlas = ExtResource("2_g2equ")
@@ -203,5 +206,11 @@ position = Vector2(1439, 385)
 [node name="SceneTeleporter" parent="." unique_id=1448952218 instance=ExtResource("11_e13mp")]
 position = Vector2(1826, 373)
 scene_name = "scene_1"
+
+[node name="PlayMusicOnReady" type="Node" parent="." unique_id=2080865939]
+script = ExtResource("13_wr8iv")
+intro_sound = ExtResource("14_e13mp")
+loop_sound = ExtResource("15_vrdqu")
+metadata/_custom_type_script = "uid://gg1cpmoujv14"
 
 [connection signal="body_entered" from="Barrel" to="tut_guyt" method="_on_barrel_body_entered"]

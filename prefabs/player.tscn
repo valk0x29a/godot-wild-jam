@@ -353,10 +353,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("13_lulei")
 
-[node name="PlayMusicOnReady" type="Node" parent="." unique_id=385676799]
-script = ExtResource("13_x0bak")
-intro_sound = ExtResource("14_lulei")
-loop_sound = ExtResource("15_edtk3")
-metadata/_custom_type_script = "uid://gg1cpmoujv14"
+
 
 [connection signal="pressed" from="CanvasLayer/retry" to="." method="_on_retry_pressed"]

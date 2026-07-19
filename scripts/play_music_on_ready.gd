@@ -5,6 +5,4 @@ extends Node
 @export var loop_sound: AudioStream;
 
 func _ready() -> void:
-	SoundManager.play_music(intro_sound);
-	await SoundManager.get_music_node().finished;
-	SoundManager.play_music(loop_sound);
+	SoundManager.play_music(intro_sound, loop_sound);
