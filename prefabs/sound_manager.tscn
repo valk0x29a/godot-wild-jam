@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://dvrnbiayh80y6" path="res://assets/audio/sfx/wildjam button press.mp3" id="5_qmqvb"]
 [ext_resource type="AudioStream" uid="uid://nt8mjhpepph7" path="res://assets/audio/sfx/wildjam barrel bounce.mp3" id="6_5g60j"]
 [ext_resource type="AudioStream" uid="uid://b2r441gyi72pc" path="res://assets/audio/sfx/wildjam super bouncy.mp3" id="7_d2c7h"]
+[ext_resource type="AudioStream" uid="uid://cafrb23jieh0v" path="res://assets/audio/New Recording 8.mp3" id="8_yxlyk"]
 
 [node name="SoundManager" type="Node2D" unique_id=707277150]
 script = ExtResource("1_imb8a")
@@ -50,5 +51,11 @@ unique_name_in_owner = true
 [node name="door" type="AudioStreamPlayer" parent="." unique_id=606009421]
 unique_name_in_owner = true
 
+[node name="story" type="AudioStreamPlayer" parent="." unique_id=1862439294]
+unique_name_in_owner = true
+stream = ExtResource("8_yxlyk")
+volume_db = 20.0
+
 [node name="music_placeholder" type="AudioStreamPlayer" parent="." unique_id=531937639]
 unique_name_in_owner = true
+volume_db = -3.0

@@ -1,14 +1,5 @@
 extends Node
 
-func _ready() -> void:
-	pass
-	get_tree().scene_changed.connect(stop_audio);
-
-func stop_audio():
-	print("stoping audio");
-	for i in get_child_count():
-		var audio: AudioStreamPlayer = get_child(i);
-		audio.stop();
 
 func play_jump():
 	%jump.play();
@@ -46,5 +37,11 @@ func play_door_sound():
 func play_music(stream: AudioStream):
 	%music_placeholder.stream = stream;
 	%music_placeholder.play();
+
+func stop_music():
+	%music_placeholder.stop()
+
+func play_story():
+	%story.play()
 
 func get_music_node() -> AudioStreamPlayer: return %music_placeholder;

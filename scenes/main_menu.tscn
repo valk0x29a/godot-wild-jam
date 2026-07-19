@@ -69,7 +69,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l6cm7")
-scene_name = "intro_cutscene"
+scene_name = "tutorial"
 
 [node name="Play" type="TextureButton" parent="." unique_id=614545281]
 layout_mode = 0
