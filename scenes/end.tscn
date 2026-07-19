@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://4rll8dqq5u6r"]
 
 [ext_resource type="Script" uid="uid://bodw5wcme0onx" path="res://scripts/end.gd" id="1_8hmjt"]
+[ext_resource type="Texture2D" uid="uid://bhqpe5i2pnvsf" path="res://assets/sprites/window.png" id="2_8hmjt"]
+[ext_resource type="Texture2D" uid="uid://dvf343dy75ljn" path="res://assets/sprites/house_bg.png" id="2_o5lv4"]
 [ext_resource type="PackedScene" uid="uid://clnu47p5k0w8n" path="res://prefabs/player.tscn" id="3_8hmjt"]
 [ext_resource type="Texture2D" uid="uid://dbwu7df0x8gtb" path="res://assets/sprites/final_cutseen.png" id="4_o5lv4"]
 [ext_resource type="PackedScene" uid="uid://qo86a6ndvabs" path="res://prefabs/home_floor.tscn" id="5_8hmjt"]
@@ -8,6 +10,25 @@
 
 [node name="end" type="Node2D" unique_id=1201160193]
 script = ExtResource("1_8hmjt")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=260423912]
+scroll_offset = Vector2(-50, -10)
+repeat_size = Vector2(640, 360)
+repeat_times = 6
+
+[node name="HouseBg" type="Sprite2D" parent="Parallax2D" unique_id=739745309]
+position = Vector2(807, 459)
+texture = ExtResource("2_o5lv4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1867012542]
+position = Vector2(-1, 269)
+scale = Vector2(2, 2)
+texture = ExtResource("2_8hmjt")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=977432727]
+position = Vector2(1284, 269)
+scale = Vector2(2, 2)
+texture = ExtResource("2_8hmjt")
 
 [node name="FinalCutseen" type="Sprite2D" parent="." unique_id=1431892871]
 position = Vector2(642, 212)
@@ -25,11 +46,8 @@ visible = false
 [node name="TextureRect" parent="Player/background" parent_id_path=PackedInt32Array(75895601, 930774204) index="2" unique_id=85079610]
 visible = false
 
-[node name="TextureRect2" parent="Player/background" parent_id_path=PackedInt32Array(75895601, 930774204) index="3" unique_id=1640253226]
+[node name="TextureRect2" parent="Player/background" parent_id_path=PackedInt32Array(75895601, 930774204) index="4" unique_id=1640253226]
 visible = false
-
-[node name="TextureRect3" parent="Player/background" parent_id_path=PackedInt32Array(75895601, 930774204) index="4" unique_id=601337935]
-visible = true
 
 [node name="SceneTeleporter" parent="." unique_id=1448952218 instance=ExtResource("5_s4tl2")]
 visible = false

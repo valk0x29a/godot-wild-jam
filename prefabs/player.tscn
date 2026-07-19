@@ -13,9 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://bxuu01flhvwud" path="res://assets/sprites/glass.png" id="10_m2qjg"]
 [ext_resource type="Texture2D" uid="uid://da2fk7pnklvit" path="res://assets/sprites/front-ground.png" id="11_llb5v"]
 [ext_resource type="Texture2D" uid="uid://dvf343dy75ljn" path="res://assets/sprites/house_bg.png" id="13_lulei"]
-[ext_resource type="Script" uid="uid://gg1cpmoujv14" path="res://scripts/play_music_on_ready.gd" id="13_x0bak"]
-[ext_resource type="AudioStream" uid="uid://cuuwhxgcvmlc7" path="res://assets/audio/music/wildjam 4 buildup.mp3" id="14_lulei"]
-[ext_resource type="AudioStream" uid="uid://huohm4upb7w4" path="res://assets/audio/music/wildjam 4 loop.mp3" id="15_edtk3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u51tk"]
 atlas = ExtResource("2_4dohe")
@@ -337,13 +334,6 @@ grow_vertical = 2
 texture = ExtResource("10_m2qjg")
 stretch_mode = 1
 
-[node name="TextureRect2" type="TextureRect" parent="background" unique_id=1640253226]
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 360.0
-grow_horizontal = 2
-texture = ExtResource("11_llb5v")
-
 [node name="TextureRect3" type="TextureRect" parent="background" unique_id=601337935]
 visible = false
 anchors_preset = 15
@@ -352,5 +342,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("13_lulei")
+
+[node name="TextureRect2" type="TextureRect" parent="background" unique_id=1640253226]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 360.0
+grow_horizontal = 2
+texture = ExtResource("11_llb5v")
 
 [connection signal="pressed" from="CanvasLayer/retry" to="." method="_on_retry_pressed"]
