@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://qo86a6ndvabs"]
+
+[ext_resource type="Texture2D" uid="uid://comfrlf31h0go" path="res://assets/sprites/sprite-sheets/monkey-floor-home.png" id="1_6p7qe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jeeod"]
+size = Vector2(128, 64)
+
+[node name="home_floor" type="StaticBody2D" unique_id=290484240]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1187070621]
+texture = ExtResource("1_6p7qe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=807236749]
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_jeeod")

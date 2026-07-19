@@ -1,6 +1,19 @@
 [gd_scene format=3 uid="uid://dm1el4g4mpx3i"]
 
 [ext_resource type="Texture2D" uid="uid://do206bt1epifj" path="res://assets/sprites/sprite-sheets/monkey-tileset.png" id="1_iuou0"]
+[ext_resource type="Texture2D" uid="uid://cuvjoxn5gkwru" path="res://assets/sprites/sprite-sheets/monkey-tileset-home.png" id="1_leseh"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ng7wp"]
+texture = ExtResource("1_leseh")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_leseh"]
 texture = ExtResource("1_iuou0")
@@ -19,6 +32,7 @@ tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 255
 physics_layer_0/collision_mask = 255
 sources/1 = SubResource("TileSetAtlasSource_leseh")
+sources/0 = SubResource("TileSetAtlasSource_ng7wp")
 
 [node name="TileMap" type="TileMap" unique_id=1174134567]
 tile_set = SubResource("TileSet_jeeod")
