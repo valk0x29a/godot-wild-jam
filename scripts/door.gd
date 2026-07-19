@@ -32,3 +32,4 @@ func open():
 	if not played:
 		%Sprite2D.play("open")
 		played = true
+		SoundManager.play_door_sound();

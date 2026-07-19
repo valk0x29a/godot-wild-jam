@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://tbeiqvdcaxmk"
+path="res://.godot/imported/wildjam jump pad.mp3-02ed57f2fb0b4c4bba4033fb2872b2a7.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sfx/wildjam jump pad.mp3"
+dest_files=["res://.godot/imported/wildjam jump pad.mp3-02ed57f2fb0b4c4bba4033fb2872b2a7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

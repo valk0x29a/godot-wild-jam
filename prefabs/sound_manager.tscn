@@ -6,8 +6,10 @@
 [ext_resource type="AudioStream" uid="uid://co1ydg76fhogk" path="res://assets/audio/sfx/wildjam button press UI.mp3" id="4_yxlyk"]
 [ext_resource type="AudioStream" uid="uid://dvrnbiayh80y6" path="res://assets/audio/sfx/wildjam button press.mp3" id="5_qmqvb"]
 [ext_resource type="AudioStream" uid="uid://nt8mjhpepph7" path="res://assets/audio/sfx/wildjam barrel bounce.mp3" id="6_5g60j"]
+[ext_resource type="AudioStream" uid="uid://tbeiqvdcaxmk" path="res://assets/audio/sfx/wildjam jump pad.mp3" id="6_d2c7h"]
 [ext_resource type="AudioStream" uid="uid://b2r441gyi72pc" path="res://assets/audio/sfx/wildjam super bouncy.mp3" id="7_d2c7h"]
 [ext_resource type="AudioStream" uid="uid://cafrb23jieh0v" path="res://assets/audio/New Recording 8.mp3" id="8_yxlyk"]
+[ext_resource type="AudioStream" uid="uid://bto5ijv0vlb7l" path="res://assets/audio/sfx/wildjam door.mp3" id="9_d2c7h"]
 [ext_resource type="AudioStream" uid="uid://dmmlcfb2m3q4g" path="res://assets/audio/New Recording 9.mp3" id="9_qmqvb"]
 
 [node name="SoundManager" type="Node2D" unique_id=707277150]
@@ -37,6 +39,7 @@ unique_name_in_owner = true
 
 [node name="jumppad" type="AudioStreamPlayer" parent="." unique_id=1359240125]
 unique_name_in_owner = true
+stream = ExtResource("6_d2c7h")
 
 [node name="barrel_bounce" type="AudioStreamPlayer" parent="." unique_id=492914311]
 unique_name_in_owner = true
@@ -51,6 +54,7 @@ unique_name_in_owner = true
 
 [node name="door" type="AudioStreamPlayer" parent="." unique_id=606009421]
 unique_name_in_owner = true
+stream = ExtResource("9_d2c7h")
 
 [node name="story" type="AudioStreamPlayer" parent="." unique_id=1862439294]
 unique_name_in_owner = true
