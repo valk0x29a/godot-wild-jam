@@ -117,7 +117,7 @@ libraries/ = SubResource("AnimationLibrary_10wug")
 autoplay = &"move"
 
 [node name="Door2" parent="." unique_id=1764037804 instance=ExtResource("5_oo15q")]
-position = Vector2(699, 440)
+position = Vector2(700, 459)
 rotation = 1.5707964
 door_open_offset = Vector2(128, 0)
 
@@ -128,6 +128,7 @@ explosion_force = 200.0
 
 [node name="SceneTeleporter" parent="." unique_id=1448952218 instance=ExtResource("11_8s7vo")]
 position = Vector2(376, 757)
+scene_name = "end"
 
 [node name="Door3" parent="." unique_id=280003144 instance=ExtResource("5_oo15q")]
 position = Vector2(579, 777)

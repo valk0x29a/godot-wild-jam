@@ -43,5 +43,8 @@ func stop_music():
 
 func play_story():
 	%story.play()
-
+	
+func play_end():
+	%end.play()
+	
 func get_music_node() -> AudioStreamPlayer: return %music_placeholder;
