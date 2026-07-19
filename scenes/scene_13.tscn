@@ -128,7 +128,7 @@ explosion_force = 200.0
 
 [node name="SceneTeleporter" parent="." unique_id=1448952218 instance=ExtResource("11_8s7vo")]
 position = Vector2(376, 757)
-scene_name = "end"
+scene_name = "end_cutscene"
 
 [node name="Door3" parent="." unique_id=280003144 instance=ExtResource("5_oo15q")]
 position = Vector2(579, 777)
