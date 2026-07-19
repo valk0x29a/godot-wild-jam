@@ -30,9 +30,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	current_timer -= delta;
-	if(Input.is_action_just_released("ui_accept") || Input.is_action_just_released("ui_cancel")):
-		move_next();
-		return;
+
 	if(current_timer <= 0):
 		current_text_index += 1;
 		text_ui.visible_characters = current_text_index;

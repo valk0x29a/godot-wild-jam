@@ -1,29 +1,34 @@
 [gd_scene format=3 uid="uid://dnce02trcs6t"]
 
+[ext_resource type="Script" uid="uid://bodw5wcme0onx" path="res://scripts/end.gd" id="1_fhb1a"]
 [ext_resource type="Script" uid="uid://bnd75j5s3rfdr" path="res://scripts/cutscenes_manager.gd" id="1_qrpfg"]
-[ext_resource type="Texture2D" uid="uid://brramo03vm2ig" path="res://icon.svg" id="2_jifsq"]
+[ext_resource type="Texture2D" uid="uid://dbwu7df0x8gtb" path="res://assets/sprites/final_cutseen.png" id="3_lsmkt"]
 
 [node name="IntroCutscene" type="Node2D" unique_id=339485010]
+script = ExtResource("1_fhb1a")
 
 [node name="CutscenesManager" type="Node" parent="." unique_id=1110449749 node_paths=PackedStringArray("text_ui")]
 script = ExtResource("1_qrpfg")
 text_ui = NodePath("../RichTextLabel")
-time_to_switch_to_next_cutscene = 10.0
+time_to_switch_to_next_cutscene = 6.0
 scene_to_load_after = "main_menu"
 texts = Array[String](["MEOW MOEW"])
 metadata/_custom_type_script = "uid://bnd75j5s3rfdr"
 
-[node name="Sprite2D" type="Sprite2D" parent="CutscenesManager" unique_id=1656807142]
-position = Vector2(646, 316)
-texture = ExtResource("2_jifsq")
+[node name="CanvasLayer" type="CanvasLayer" parent="CutscenesManager" unique_id=45942504]
+
+[node name="Sprite2D" type="Sprite2D" parent="CutscenesManager/CanvasLayer" unique_id=1225297579]
+scale = Vector2(2, 2)
+texture = ExtResource("3_lsmkt")
+centered = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1055511844]
 offset_right = 1277.0
 offset_bottom = 288.0
+text = " "
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=606355561]
 offset_left = -1.0
 offset_top = 693.0
 offset_right = 1276.0
 offset_bottom = 981.0
-text = "Press Space To Skip"
