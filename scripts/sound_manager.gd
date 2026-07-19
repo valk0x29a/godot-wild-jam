@@ -1,5 +1,7 @@
 extends Node
 
+var intro_sound: AudioStream;
+var loop_sound: AudioStream;
 
 func play_jump():
 	%jump.play();
@@ -34,8 +36,11 @@ func play_barrel_explosion_sound():
 func play_door_sound():
 	%door.play();
 
-func play_music(stream: AudioStream):
-	%music_placeholder.stream = stream;
+func play_music(intro_stream: AudioStream, loop_stream: AudioStream):
+	%music_placeholder.stream = intro_stream;
+	%music_placeholder.play();
+	await %music_placeholder.finished;
+	%music_placeholder.stream = loop_stream;
 	%music_placeholder.play();
 
 func stop_music():
