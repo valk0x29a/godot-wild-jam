@@ -353,6 +353,4 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("13_lulei")
 
-
-
 [connection signal="pressed" from="CanvasLayer/retry" to="." method="_on_retry_pressed"]
