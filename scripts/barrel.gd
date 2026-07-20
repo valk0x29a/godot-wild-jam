@@ -62,6 +62,7 @@ func _on_body_entered(_body: Node) -> void:
 		queue_free();
 		
 func explode():
+	SoundManager.play_barrel_explosion_sound();
 	var effect = preload("uid://djyn8sj27sgd6").instantiate()
 	effect.global_position = global_position
 	add_sibling(effect)

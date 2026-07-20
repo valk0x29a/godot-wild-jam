@@ -21,6 +21,9 @@ func play_ingame_button_sound():
 func play_fan_sound():
 	%fan.play();
 
+func stop_fan_sound():
+	%fan.stop();
+
 func play_jumppad_sound():
 	%jumppad.play();
 
